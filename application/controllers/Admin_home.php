@@ -30,6 +30,7 @@ class Admin_home extends CI_Controller
 
         $data['title'] = "Admin Home";
         $data['test'] = "hello";
+        $data['jml_barang'] = $this->db->get('barang')->num_rows();
 
         // $data['jumlah_praktikan'] = $this->Asprak_model->count_all_results('tb_praktikan');
         // $data['jumlah_modul'] = $this->Asprak_model->count_all_results('tb_praktikum');

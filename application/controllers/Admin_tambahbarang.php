@@ -83,16 +83,7 @@ class Admin_tambahbarang extends CI_Controller
 
         // $nama_file = str_replace(" ", "_", $namaFiles);
         $tmpName = $_FILES['file']['tmp_name'];
-        // $nama_folder = "assets_user/file_upload/";
-        // $file_baru = $nama_folder . basename($nama_file);
 
-        // if ((($type == "video/mp4") || ($type == "video/3gpp")) && ($ukuranFile < 8000000)) {
-
-        //   move_uploaded_file($tmpName, $file_baru);
-        //   return $file_baru;
-        // }
-
-        // var_dump($namaFiles);die();
 
         if ($eror === 4) {
             $flahdata = $this->alert('Maaf', 'danger', 'Gagal Mengunggah Gambar!');
@@ -106,7 +97,7 @@ class Admin_tambahbarang extends CI_Controller
         $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
 
         $ekstensiGambar = explode('.', $namaFiles);
-        // var_dump($namaFiles);die();
+
 
         $ekstensiGambar = strtolower(end($ekstensiGambar));
         if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {

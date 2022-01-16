@@ -3,7 +3,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "sidebar.php";?>
+        <?php include "sidebar.php"; ?>
 
 
         <!-- Content Wrapper -->
@@ -12,7 +12,7 @@
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "topbar.php";?>
+                <?php include "topbar.php"; ?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -34,9 +34,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Jumlah Modul</div>
+                                                Jumlah User</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                Modul
+                                                User
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -54,9 +54,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Jumlah Praktikan</div>
+                                                Jumlah Transaksi</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                Praktikan
+                                                Transaksi
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -74,10 +74,10 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah
-                                                Kelas
+                                                Pendapatan
                                             </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                Kelas
+                                                Pendapatan
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -95,8 +95,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                                Jumlah Barang</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jml_barang ?>
+                                                Barang</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -379,7 +380,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?=base_url('admin_home/logout')?>">Logout</a>
+                    <a class="btn btn-primary" href="<?= base_url('admin_home/logout') ?>">Logout</a>
                 </div>
             </div>
         </div>
