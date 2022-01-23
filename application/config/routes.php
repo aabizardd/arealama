@@ -55,8 +55,13 @@ $route['shop'] = 'Welcome/shop/';
 $route['basket'] = 'Welcome/basket/';
 $route['resi'] = 'Welcome/resi/';
 $route['order'] = 'Welcome/order/';
+$route['auth'] = 'auth_user';
+$route['auth_admin'] = 'Auth';
+
 
 $route['default_controller'] = 'Welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
 $route['my-face'] = "User/getIdposting/myfacehelper";
+
+$route['home'] = 'Welcome';

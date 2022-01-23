@@ -1,20 +1,25 @@
 <!-- Bootstrap core JavaScript-->
-<script src="<?=base_url('assets_template/')?>vendor/jquery/jquery.min.js"></script>
-<script src="<?=base_url('assets_template/')?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+</script>
+
 
 <!-- Core plugin JavaScript-->
-<script src="<?=base_url('assets_template/')?>vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<?= base_url('assets_template/') ?>vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="<?=base_url('assets_template/')?>js/sb-admin-2.min.js"></script>
+<script src="<?= base_url('assets_template/') ?>js/sb-admin-2.min.js"></script>
 
 
 <!-- Page level plugins -->
-<!-- <script src="<?=base_url('assets_template/')?>vendor/chart.js/Chart.min.js"></script> -->
+<!-- <script src="<?= base_url('assets_template/') ?>vendor/chart.js/Chart.min.js"></script> -->
 
 <!-- Page level custom scripts -->
-<!-- <script src="<?=base_url('assets_template/')?>js/demo/chart-area-demo.js"></script>
-<script src="<?=base_url('assets_template/')?>js/demo/chart-pie-demo.js"></script> -->
+<!-- <script src="<?= base_url('assets_template/') ?>js/demo/chart-area-demo.js"></script>
+<script src="<?= base_url('assets_template/') ?>js/demo/chart-pie-demo.js"></script> -->
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -53,7 +58,7 @@ $('.editbahan').on('click', function(e) {
     $("#modal-view #keterangan").val(keterangan_bahan);
     $("#modal-view #id_bahan").val(id_bahan);
     $("#modal-view #foto_old").val(foto_bahan);
-    $("#modal-view #gambar").attr('src', '<?=base_url('assets_praktikum/img_bahan_modul/')?>' + foto_bahan);
+    $("#modal-view #gambar").attr('src', '<?= base_url('assets_praktikum/img_bahan_modul/') ?>' + foto_bahan);
 
 
 });
@@ -76,9 +81,9 @@ $('.edit-kelas').on('click', function(e) {
 
 
 
-<script src="<?=base_url('assets_template/js/sweetalert/sweetalert2.all.min.js')?>">
+<script src="<?= base_url('assets_template/js/sweetalert/sweetalert2.all.min.js') ?>">
 </script>
-<script type="text/javascript" src="<?=base_url('assets_template/js/sweetalert/myscript.js')?>">
+<script type="text/javascript" src="<?= base_url('assets_template/js/sweetalert/myscript.js') ?>">
 </script>
 
 <script>
@@ -164,11 +169,12 @@ $('.tombol-aktif').on('click', function(e) {
 </script>
 
 <!-- Page level plugins -->
-<script src="<?=base_url('assets_template/')?>vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="<?=base_url('assets_template/')?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets_template/') ?>vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets_template/') ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="<?=base_url('assets_template/')?>js/demo/datatables-demo.js"></script>
+<script src="<?= base_url('assets_template/') ?>js/demo/datatables-demo.js"></script>
+
 
 
 

@@ -25,7 +25,6 @@ class Welcome extends CI_Controller
         $this->load->view('arealama_template/header', $data);
         $this->load->view('arealama/index', $data);
         $this->load->view('arealama_template/footer');
-
     }
 
     public function shop()
@@ -58,7 +57,6 @@ class Welcome extends CI_Controller
         $this->load->view('arealama_template/header', $data);
         $this->load->view('arealama/resi', $data);
         $this->load->view('arealama_template/footer');
-
     }
 
     public function order()
@@ -66,7 +64,5 @@ class Welcome extends CI_Controller
         $this->load->view('arealama_template/header');
         $this->load->view('arealama/order');
         $this->load->view('arealama_template/footer');
-
     }
-
 }
