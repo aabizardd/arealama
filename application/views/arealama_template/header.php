@@ -101,7 +101,7 @@
 
 
 
-                        <a href="<?= base_url('basket') ?>"><img
+                        <a href="<?= base_url('cart') ?>"><img
                                 src="<?= base_url('assets_arealama/') ?>img/icon/xcart.png" alt="">
                             <span><?= $get_item ?></span></a>
                         <div class="price">Rp. 0</div>

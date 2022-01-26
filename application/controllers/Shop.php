@@ -8,6 +8,8 @@ class Shop extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+
+        $this->load->model('Konsumen_model', 'konsumen');
     }
 
 
@@ -38,10 +40,21 @@ class Shop extends CI_Controller
         ];
 
         $isAlreadyIn = $this->db->get_where('cart', $where1)->num_rows();
+        $dataCart = $this->db->get_where('cart', $where1)->row_array();
 
 
-        if ($isAlreadyIn > 1) {
-            var_dump("sudah ada");
+        if ($isAlreadyIn >= 1) {
+
+            $where = [
+                'id_konsumen' => $id_konsumen,
+                'id_barang' => $id_barang
+            ];
+
+            $data = [
+                'qty' => $dataCart['qty'] + 1,
+            ];
+
+            $this->konsumen->update('cart', $data, $where);
         } else {
 
             $data = [

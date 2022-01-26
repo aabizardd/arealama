@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2021 at 08:13 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Generation Time: Jan 27, 2022 at 12:09 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `email`, `password`, `foto_profile`, `status_active`) VALUES
-(1, 'Admin Arealama (Azhyra)', 'admin2', 'azhyra@gmail.com', '$2y$10$vX.ls95e59u559eOQOJyn.TLaMbjKs4idvn3RanxG5IEEqSUn4lQC', '60b780fd4ac13.jpg', 1),
+(1, 'Admin Arealama (Azhyra)', 'admin2', 'azhyra@gmail.com', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', '60b780fd4ac13.jpg', 1),
 (2, 'Admin Arealama (Azhyra)', 'admin1', 'azhyra2@gmail.com', '$2y$10$vX.ls95e59u559eOQOJyn.TLaMbjKs4idvn3RanxG5IEEqSUn4lQC', 'default.jpg', 1);
 
 -- --------------------------------------------------------
@@ -69,6 +69,64 @@ INSERT INTO `barang` (`id_barang`, `foto_barang`, `nama_barang`, `harga`, `deskr
 (11, 'barang60c87bf83bafc.jpeg', 'PAKET MURAH BERKELAS [DAPAT 20pcs MIX]', '350000', 'PAKET MURAH BERKELAS\r\nBerisikan atasan wanita mix seperti kemeja dan blouse, turtlenec, sweater, cardigan, knitwear campur lengan panjang dan pendek dengan berbagai warna model dan motif berbeda.\r\nHARGA SESUAI KUALITAS', 'https://shopee.co.id/PAKET-MURAH-BERKELAS-DAPAT-20pcs-MIX--i.224838955.10011547398'),
 (12, 'barang60c880db8cf12.jpeg', 'PAKET CARDIGAN', '1060000', 'Berisikan atasan wanita cardigan, bahan mix, campur lengan panjang dan pendek dengan berbagai warna model dan motif yang berbeda\r\n\r\n-	Paket 1.550k berisikan 50pcs [BEST SELLER]\r\n-	Paket 1.060k berisikan 30pcs', 'https://shopee.co.id/-50-Pcs-PAKET-CARDIGAN-i.224838955.9067160349');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `id_konsumen` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `qty` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `konsumen`
+--
+
+CREATE TABLE `konsumen` (
+  `id` int(11) NOT NULL,
+  `username` varchar(250) NOT NULL,
+  `nama` varchar(250) DEFAULT NULL,
+  `email` varchar(250) NOT NULL,
+  `no_telp` varchar(250) DEFAULT NULL,
+  `foto` varchar(250) NOT NULL DEFAULT 'user_default.png',
+  `password` varchar(250) NOT NULL,
+  `status_aktif` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `konsumen`
+--
+
+INSERT INTO `konsumen` (`id`, `username`, `nama`, `email`, `no_telp`, `foto`, `password`, `status_aktif`) VALUES
+(9, 'test', NULL, 'abizard@student.telkomuniversity.ac.id', NULL, 'user_default.png', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_token`
+--
+
+CREATE TABLE `user_token` (
+  `id` int(11) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `token` varchar(250) NOT NULL,
+  `date_created` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_token`
+--
+
+INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
+(1, 'm.abizard1123@gmail.com', 'qZjbA1UVCEPGtOchzllszr0Yqf7mOGOMrWzYlyS/oLc=', '1642905501'),
+(6, 'abizard@student.telkomuniversity.ac.id', '859gfw6n/I2ckojtM2u3hijiVpF/PuKOE50czhEFDdk=', '1642910724');
+
 --
 -- Indexes for dumped tables
 --
@@ -86,6 +144,24 @@ ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `konsumen`
+--
+ALTER TABLE `konsumen`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user_token`
+--
+ALTER TABLE `user_token`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -100,6 +176,24 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `barang`
   MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `konsumen`
+--
+ALTER TABLE `konsumen`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `user_token`
+--
+ALTER TABLE `user_token`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
