@@ -26,6 +26,22 @@
 <body>
 
 
+    <?php
+
+    $get_item = 0;
+
+
+
+    if ($this->session->userdata('id_konsumen')) {
+
+        $get_item = $this->db->get_where('cart', ['id_konsumen' => $this->session->userdata('id_konsumen')])->num_rows();
+    } else {
+        $get_item = 0;
+    }
+
+    ?>
+
+
 
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -86,7 +102,8 @@
 
 
                         <a href="<?= base_url('basket') ?>"><img
-                                src="<?= base_url('assets_arealama/') ?>img/icon/xcart.png" alt=""> <span>0</span></a>
+                                src="<?= base_url('assets_arealama/') ?>img/icon/xcart.png" alt="">
+                            <span><?= $get_item ?></span></a>
                         <div class="price">Rp. 0</div>
 
 

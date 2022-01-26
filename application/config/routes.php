@@ -51,12 +51,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 
 $route['detail_barang/:any'] = 'admin_listbarang/detail_barang/';
-$route['shop'] = 'Welcome/shop/';
 $route['basket'] = 'Welcome/basket/';
 $route['resi'] = 'Welcome/resi/';
 $route['order'] = 'Welcome/order/';
 $route['auth'] = 'auth_user';
 $route['auth_admin'] = 'Auth';
+
 
 
 $route['default_controller'] = 'Welcome';

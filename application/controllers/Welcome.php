@@ -30,6 +30,9 @@ class Welcome extends CI_Controller
     public function shop()
     {
 
+
+
+
         $this->load->view('arealama_template/header');
         $this->load->view('arealama/shop');
         $this->load->view('arealama_template/footer');

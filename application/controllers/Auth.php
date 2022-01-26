@@ -44,6 +44,7 @@ class Auth extends CI_Controller
         $user = $this->db->get_where('admin', [
             'username' => $username,
         ])->row_array();
+
         // ada user
         if ($user) {
             // jika aktif

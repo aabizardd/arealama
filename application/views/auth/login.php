@@ -20,24 +20,24 @@
                                         <h1 class="h4 text-gray-900 mb-4">Login Aplikasi</h1>
                                     </div>
 
-                                    <?=$this->session->flashdata('alert')?>
+                                    <?= $this->session->flashdata('alert') ?>
 
-                                    <?=form_error('username', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <?= form_error('username', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 	<strong>Maaf!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
-									</button></div>');?>
+									</button></div>'); ?>
 
-                                    <?=form_error('password', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <?= form_error('password', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 	<strong>Maaf!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
-									</button></div>');?>
+									</button></div>'); ?>
 
-                                    <form class="user" method="POST" action="<?=base_url('auth')?>">
+                                    <form class="user" method="POST" action="<?= base_url('auth_admin') ?>">
 
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="username"
                                                 name="username" aria-describedby="emailHelp"
-                                                value="<?=set_value('username');?>" placeholder="Masukkan Username">
+                                                value="<?= set_value('username'); ?>" placeholder="Masukkan Username">
                                         </div>
 
                                         <div class="form-group">
