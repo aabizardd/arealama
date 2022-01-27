@@ -126,6 +126,18 @@ class Konsumen_model extends CI_model
         return $this->db->get()->result_array();
     }
 
+    public function total_cart($id_user)
+    {
+
+        // SELECT * FROM tb_pengumpulan_tugas tpt JOIN tb_praktikum tp on(tpt.id_praktikum = tp.id_praktikum) RIGHT JOIN tb_praktikan tpk on(tpt.id_praktikan = tpk.id_praktikan)
+
+        $this->db->select('sum(qty * harga) total');
+        $this->db->from('cart c');
+        $this->db->join('barang b', 'c.id_barang = b.id_barang');
+        $this->db->where('c.id_konsumen', $id_user);
+        return $this->db->get()->row_array();
+    }
+
     // public function get_not_pengumpulan_tugas($data)
     // {
 

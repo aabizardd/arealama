@@ -48,7 +48,7 @@
                                     <td class="quantity__item">
                                         <div class="quantity">
                                             <div class="pro-qty-2">
-                                                <input type="text" name="qty[]" value="<?= $c['qty'] ?>">
+                                                <input type="number" name="qty[]" value="<?= $c['qty'] ?>" min="1">
                                             </div>
                                         </div>
                                     </td>
@@ -97,8 +97,10 @@
                 <div class="cart__total">
                     <h6>Cart total</h6>
                     <ul>
-                        <li>Subtotal <span>$ 169.50</span></li>
-                        <li>Total <span>$ 169.50</span></li>
+
+                        <li>Total
+                            <span><?= 'Rp ' . number_format($total_cart['total'], 2, ",", ".") ?></span>
+                        </li>
                     </ul>
                     <a href="#" class="primary-btn">Proceed to checkout</a>
                 </div>

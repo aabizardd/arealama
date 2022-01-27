@@ -42,12 +42,14 @@ class Welcome extends CI_Controller
         $id_konsumen = $this->session->userdata('id_konsumen');
 
         $cart = $this->konsumen->get_cart_detail($id_konsumen);
+        $total = $this->konsumen->total_cart($id_konsumen);
 
         // var_dump($cart);
         // die();
 
         $data = [
-            'carts' => $cart
+            'carts' => $cart,
+            'total_cart' => $total,
         ];
 
 
@@ -112,7 +114,9 @@ class Welcome extends CI_Controller
 
     public function delete_cart($id)
     {
-        $where = [];
+        $where = [
+            'id' => $id
+        ];
         $this->konsumen->delete('cart', $where);
 
 
