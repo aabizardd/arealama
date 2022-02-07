@@ -21,7 +21,7 @@
 
             <div class="col-lg-12" style="margin-top: -100px;">
                 <center>
-                    <img src="<?=base_url('assets_arealama/img/ekspedisi.jpg')?>" alt="" width="300">
+                    <img src="<?= base_url('assets_arealama/img/ekspedisi.jpg') ?>" alt="" width="300">
                 </center>
 
                 <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;"
@@ -38,9 +38,9 @@
                         <label>Pilih Kurir</label>
                         <select class="custom-select" id="courier_input">
                             <option value selected hidden>Pilih Kurir...</option>
-                            <?php foreach ($kurirs as $item): ?>
-                            <option><?=$item?></option>
-                            <?php endforeach?>
+                            <?php foreach ($kurirs as $item) : ?>
+                            <option><?= $item ?></option>
+                            <?php endforeach ?>
                         </select>
                     </div>
 

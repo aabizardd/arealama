@@ -138,6 +138,19 @@ class Konsumen_model extends CI_model
         return $this->db->get()->row_array();
     }
 
+    public function get_transaction_detail($id_user)
+    {
+
+        // SELECT * FROM tb_pengumpulan_tugas tpt JOIN tb_praktikum tp on(tpt.id_praktikum = tp.id_praktikum) RIGHT JOIN tb_praktikan tpk on(tpt.id_praktikan = tpk.id_praktikan)
+
+        $this->db->select('*');
+        $this->db->from('barang_checkout c');
+        $this->db->join('barang b', 'c.id_barang = b.id_barang');
+        $this->db->join('transaksi t', 'c.id_transaksi = t.id_transaksi');
+        $this->db->where('t.id_konsumen', $id_user);
+        return $this->db->get()->result_array();
+    }
+
     // public function get_not_pengumpulan_tugas($data)
     // {
 

@@ -21,6 +21,9 @@
 
 
     <link rel="icon" href="<?= base_url('assets_arealama/') ?>img/logo-arealama.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+
+
 </head>
 
 <body>
@@ -122,7 +125,7 @@
                         <?php else : ?>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" data-toggle="modal" data-target="#modalLogin" href="#">Profil</a>
-                            <a class="dropdown-item" data-toggle="modal" data-target="#modalRegist" href="#">Pesanan
+                            <a class="dropdown-item" href="<?= base_url('history') ?>">Pesanan
                                 Saya</a>
                             <a class="dropdown-item" href="<?= base_url('auth_user/logout') ?>">Logout</a>
                         </div>

@@ -17,9 +17,12 @@
 
 <section class="shop spad">
     <div class="container">
+        <?= $this->session->flashdata('message') ?>
         <div class="row">
+
             <div class="col-lg-3">
                 <div class="shop__sidebar">
+
                     <div class="shop__sidebar__search">
                         <form action="#">
                             <input type="text" placeholder="Search...">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2022 at 12:09 AM
+-- Generation Time: Feb 07, 2022 at 02:42 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -72,6 +72,27 @@ INSERT INTO `barang` (`id_barang`, `foto_barang`, `nama_barang`, `harga`, `deskr
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `barang_checkout`
+--
+
+CREATE TABLE `barang_checkout` (
+  `id_barang_checkout` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `id_transaksi` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `barang_checkout`
+--
+
+INSERT INTO `barang_checkout` (`id_barang_checkout`, `id_barang`, `qty`, `id_transaksi`) VALUES
+(3, 10, 1, 4),
+(4, 11, 1, 4);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cart`
 --
 
@@ -105,6 +126,33 @@ CREATE TABLE `konsumen` (
 
 INSERT INTO `konsumen` (`id`, `username`, `nama`, `email`, `no_telp`, `foto`, `password`, `status_aktif`) VALUES
 (9, 'test', NULL, 'abizard@student.telkomuniversity.ac.id', NULL, 'user_default.png', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaksi`
+--
+
+CREATE TABLE `transaksi` (
+  `id_transaksi` int(11) NOT NULL,
+  `id_konsumen` int(11) NOT NULL,
+  `nama_depan` varchar(250) NOT NULL,
+  `nama_belakang` varchar(250) NOT NULL,
+  `alamat` text NOT NULL,
+  `no_hp` varchar(250) NOT NULL,
+  `jasa_pengiriman` varchar(250) DEFAULT NULL,
+  `nomor_resi` varchar(250) DEFAULT NULL,
+  `total` int(250) NOT NULL,
+  `bukti_bayar` varchar(250) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_transaksi`, `id_konsumen`, `nama_depan`, `nama_belakang`, `alamat`, `no_hp`, `jasa_pengiriman`, `nomor_resi`, `total`, `bukti_bayar`, `status`) VALUES
+(4, 9, 'Azhyra', 'Rana', 'asdfasd', '1312312', NULL, NULL, 1312312, 'materi62011a9b7784b.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -144,6 +192,12 @@ ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
+-- Indexes for table `barang_checkout`
+--
+ALTER TABLE `barang_checkout`
+  ADD PRIMARY KEY (`id_barang_checkout`);
+
+--
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
@@ -154,6 +208,12 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `konsumen`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`id_transaksi`);
 
 --
 -- Indexes for table `user_token`
@@ -178,16 +238,28 @@ ALTER TABLE `barang`
   MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
+-- AUTO_INCREMENT for table `barang_checkout`
+--
+ALTER TABLE `barang_checkout`
+  MODIFY `id_barang_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `konsumen`
 --
 ALTER TABLE `konsumen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user_token`

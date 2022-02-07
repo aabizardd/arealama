@@ -102,7 +102,7 @@
                             <span><?= 'Rp ' . number_format($total_cart['total'], 2, ",", ".") ?></span>
                         </li>
                     </ul>
-                    <a href="#" class="primary-btn">Proceed to checkout</a>
+                    <a href="<?= base_url('checkout')  ?>" class="primary-btn">Proceed to checkout</a>
                 </div>
             </div>
         </div>
