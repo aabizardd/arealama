@@ -59,6 +59,7 @@ $route['auth_admin'] = 'Auth';
 $route['delete_cart/(:num)'] = 'Welcome/delete_cart/$1';
 $route['checkout'] = 'Shop/checkout/';
 $route['history'] = 'Shop/history_pesanan/';
+$route['detail_produk/(:num)'] = 'Shop/detail_produk/$1';
 
 
 

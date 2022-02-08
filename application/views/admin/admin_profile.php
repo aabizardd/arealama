@@ -3,7 +3,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "sidebar.php";?>
+        <?php include "sidebar.php"; ?>
 
 
         <!-- Content Wrapper -->
@@ -12,7 +12,7 @@
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "topbar.php";?>
+                <?php include "topbar.php"; ?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid mb-5">
@@ -20,14 +20,15 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Profile Admin
-                            <strong class="text-primary"><?=$info_admin['nama_admin']?></strong>
+                            <strong class="text-primary"><?= $info_admin['nama_admin'] ?></strong>
                         </h1>
 
 
                     </div>
 
-                    <div class="flash-data" data-flashdata="<?=$this->session->flashdata('flash');?>"></div>
-                    <div class="flash-data-error" data-flashdata="<?=$this->session->flashdata('flash-error');?>"></div>
+                    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
+                    <div class="flash-data-error" data-flashdata="<?= $this->session->flashdata('flash-error'); ?>">
+                    </div>
 
                     <!-- Content Row -->
 
@@ -51,11 +52,13 @@
                                                 role="tab" aria-controls="home" aria-selected="true">Data
                                                 Profil</a>
                                         </li>
+
                                         <li class="nav-item" role="presentation">
                                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
                                                 role="tab" aria-controls="profile" aria-selected="false">Edit
                                                 Password</a>
                                         </li>
+
 
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
@@ -65,7 +68,7 @@
                                             <div class="row mt-2">
                                                 <div class="col-sm-4">
 
-                                                    <img src="<?=base_url('assets_praktikum/')?>img_profile/asprak/<?=$this->session->userdata('foto_profile')?>"
+                                                    <img src="<?= base_url('assets_praktikum/') ?>img_profile/admin/<?= $info_admin['foto_profile'] ?>"
                                                         alt="" class="rounded mx-auto d-block img-preview" width="100%"
                                                         height="400" id="gambar">
 
@@ -73,35 +76,36 @@
 
                                                 <div class="col-sm-8 mt-2">
 
-                                                    <?=form_error('nama_lengkap', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?= form_error('nama_lengkap', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>');?>
+													</button></div>'); ?>
 
-                                                    <?=form_error('username', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?= form_error('username', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>');?>
+													</button></div>'); ?>
 
-                                                    <?=form_error('email', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?= form_error('email', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>');?>
+													</button></div>'); ?>
 
-                                                    <form method="POST" action="<?=base_url('admin_profile/')?>"
+                                                    <form method="POST" action="<?= base_url('admin_profile/') ?>"
                                                         enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Nama Lengkap</label>
                                                             <input type="text" class="form-control" id="nama_lengkap"
                                                                 name="nama_lengkap" autocomplete="off"
-                                                                value="<?=$info_admin['nama_admin']?>">
+                                                                value="<?= $info_admin['nama_admin'] ?>">
 
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Username</label>
                                                             <input type="text" class="form-control" id="username"
                                                                 aria-describedby="emailHelp" name="username"
-                                                                autocomplete="off" value="<?=$info_admin['username']?>">
+                                                                autocomplete="off"
+                                                                value="<?= $info_admin['username'] ?>">
 
                                                         </div>
 
@@ -109,7 +113,7 @@
                                                             <label for="exampleInputEmail1">Email</label>
                                                             <input type="text" class="form-control" id="email"
                                                                 aria-describedby="emailHelp" name="email"
-                                                                autocomplete="off" value="<?=$info_admin['email']?>">
+                                                                autocomplete="off" value="<?= $info_admin['email'] ?>">
 
                                                         </div>
 
@@ -117,7 +121,7 @@
 
 
                                                         <input type="hidden" id="foto_old" name="foto_bahan"
-                                                            value="<?=$info_admin['foto_profile']?>">
+                                                            value="<?= $info_admin['foto_profile'] ?>">
 
 
 
@@ -154,7 +158,7 @@
                                             <div class="row mt-2">
                                                 <div class="col-sm-4">
 
-                                                    <img src="<?=base_url('assets_praktikum/')?>img_lain/lock.png"
+                                                    <img src="<?= base_url('assets_praktikum/') ?>img_lain/lock.png"
                                                         alt="" class="rounded mx-auto d-block img-preview" width="100%"
                                                         height="400" id="gambar">
 
@@ -162,23 +166,23 @@
 
                                                 <div class="col-sm-8 mt-2">
 
-                                                    <?=form_error('nama_lengkap', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?= form_error('nama_lengkap', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>');?>
+													</button></div>'); ?>
 
-                                                    <?=form_error('usernmae', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?= form_error('usernmae', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>');?>
+													</button></div>'); ?>
 
-                                                    <?=form_error('email', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?= form_error('email', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>');?>
+													</button></div>'); ?>
 
                                                     <form method="POST"
-                                                        action="<?=base_url('admin_profile/update_password')?>">
+                                                        action="<?= base_url('admin_profile/update_password') ?>">
 
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Passwod Lama</label>
@@ -203,7 +207,7 @@
                                                         </div>
 
                                                         <input type="hidden" id="foto_old" name="foto_bahan"
-                                                            value="<?=$info_admin['foto_profile']?>">
+                                                            value="<?= $info_admin['foto_profile'] ?>">
 
 
 
@@ -259,7 +263,7 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="<?=base_url('admin_home/logout')?>">Logout</a>
+                            <a class="btn btn-primary" href="<?= base_url('admin_home/logout') ?>">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -281,7 +285,7 @@
                             <div class="row">
                                 <div class="col-sm-5">
 
-                                    <img src="<?=base_url('assets_praktikum/img_lain/no_file.png')?>" alt=""
+                                    <img src="<?= base_url('assets_praktikum/img_lain/no_file.png') ?>" alt=""
                                         class="rounded mx-auto d-block img-preview" width="300" height="300"
                                         id="gambar">
 
@@ -289,7 +293,7 @@
 
                                 <div class="col-sm-7 mt-2">
 
-                                    <form method="POST" action="<?=base_url('admin_listmodul/update_bahan/')?>"
+                                    <form method="POST" action="<?= base_url('admin_listmodul/update_bahan/') ?>"
                                         enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Judul Bahan</label>
@@ -308,7 +312,7 @@
 
                                         <input type="hidden" value="asdsa" id="id_bahan" name="id_bahan">
                                         <input type="hidden" id="foto_old" name="foto_bahan">
-                                        <input type="hidden" name="id_praktikum" value="<?=$this->uri->segment(3)?>">
+                                        <input type="hidden" name="id_praktikum" value="<?= $this->uri->segment(3) ?>">
 
 
 

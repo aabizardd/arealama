@@ -95,6 +95,12 @@
                                                     Hapus
                                                 </a>
 
+                                                <a class="btn btn-success dropdown-item mt-2" type="button"
+                                                    href="<?= base_url('admin_kelolaadmin/edit/') . $class['id_admin'] ?>"><span
+                                                        style="color: green;"><i class="fas fa-edit"></i></span>
+                                                    Edit
+                                                </a>
+
                                                 <?php endif; ?>
 
 
@@ -105,7 +111,7 @@
                                         </div>
 
                                         <img class=" card-img-top"
-                                            src="<?= base_url('assets_praktikum/img_profile/asprak/') . $class['foto_profile'] ?>"
+                                            src="<?= base_url('assets_praktikum/img_profile/admin/') . $class['foto_profile'] ?>"
                                             alt="Card image cap" style="height: 250px;">
                                         <div class="card-body">
                                             <p class="card-title">
@@ -236,9 +242,11 @@
 
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">NIM</label>
-                            <input type="text" class="form-control" name="nim" id="nim" placeholder="Masukkan NIM">
-                            <small><i class="text-danger">* Data NIM tidak boleh sama dengan yang sudah ada</i></small>
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" class="form-control" name="username" id="username"
+                                placeholder="Masukkan Username">
+                            <small><i class="text-danger">* Data Username tidak boleh sama dengan yang sudah
+                                    ada</i></small>
                         </div>
 
                         <div class="form-group">

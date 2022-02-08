@@ -15,13 +15,16 @@ class Admin_profile extends CI_Controller
         if (!$this->session->userdata('id_admin')) {
             redirect('auth');
         }
-
     }
 
     public function index()
     {
         $data['title'] = "Profil Admin";
-        $data['info_admin'] = $this->admin->get('admin')->row_array();
+
+        $id_admin = $this->session->userdata('id_admin');
+
+        $data['info_admin'] = $this->admin->get_where('admin', ['id_admin' => $id_admin])->row_array();
+
 
         $username = $this->input->post('username');
         $email = $this->input->post('email');
@@ -40,7 +43,6 @@ class Admin_profile extends CI_Controller
             $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[admin.username]', [
                 'is_unique' => 'Username ini sudah digunakan!',
             ]);
-
         } elseif ($data['info_admin']['email'] != $email) {
             $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[admin.email]', [
                 'is_unique' => 'Email ini sudah digunakan!',
@@ -54,7 +56,6 @@ class Admin_profile extends CI_Controller
         } else {
             $this->updateProfile();
         }
-
     }
 
     public function updateProfile()
@@ -80,6 +81,16 @@ class Admin_profile extends CI_Controller
                 'email' => $email,
                 'foto_profile' => $this->_uploadFile($file, $foto_bahan_lama),
             ];
+
+            $array_items = array('foto_profile');
+            $this->session->unset_userdata($array_items);
+
+            $data = [
+                'foto_profile' => $data_admin['foto_profile'],
+            ];
+
+            $this->session->set_userdata($data);
+            // unset($);
 
             // $this->session->set_userdata('foto_profile', $data_admin['foto_profile']);
 
@@ -112,7 +123,6 @@ class Admin_profile extends CI_Controller
         $this->session->set_flashdata('flash', 'Data Profil Berhasil Diubah!');
 
         redirect('admin_profile');
-
     }
 
     private function _uploadFile($file, $filelama)
@@ -162,12 +172,11 @@ class Admin_profile extends CI_Controller
                 $namaFilesBaru .= '.';
                 $namaFilesBaru .= $ekstensiGambar;
 
-                move_uploaded_file($tmpName, 'assets_praktikum/img_profile/asprak/' . $namaFilesBaru);
+                move_uploaded_file($tmpName, 'assets_praktikum/img_profile/admin/' . $namaFilesBaru);
 
                 return $namaFilesBaru;
             }
         }
-
     }
 
     public function update_password()
@@ -187,9 +196,7 @@ class Admin_profile extends CI_Controller
         } else {
 
             $this->updatePassword();
-
         }
-
     }
 
     public function updatePassword()
@@ -208,13 +215,10 @@ class Admin_profile extends CI_Controller
 
             $this->admin->update('admin', $data, ['id_admin' => $this->session->userdata('id_admin')]);
             $this->session->set_flashdata('flash', "Password Berhasil Diubah!");
-
         } else {
             $this->session->set_flashdata('flash-error', "Password Lama Salah!");
         }
 
         redirect('admin_profile/');
-
     }
-
 }

@@ -54,7 +54,7 @@
                  <span
                      class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $this->session->userdata('username') ?></span>
                  <img class="img-profile rounded-circle"
-                     src="<?= base_url('assets_praktikum/') ?>img_profile/asprak/<?= $this->session->userdata('foto_profile') ?>">
+                     src="<?= base_url('assets_praktikum/') ?>img_profile/admin/<?= $this->session->userdata('foto_profile') ?>">
              </a>
              <!-- Dropdown - User Information -->
              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

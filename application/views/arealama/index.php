@@ -148,7 +148,9 @@
 
                     <div class="product__item__text">
                         <h6><?= $item->nama_barang ?></h6>
-                        <a href="" class="add-cart" style="color: #893D39;">Detail Product</a>
+                        <a href="<?= base_url('detail_produk/' . $item->id_barang) ?>" class="add-cart"
+                            style="color: #893D39;">Detail
+                            Product</a>
                         <div class="rating">
                             <i class="fa fa-star" style="color: #e8e800;"></i>
                             <i class="fa fa-star" style="color: #e8e800;"></i>

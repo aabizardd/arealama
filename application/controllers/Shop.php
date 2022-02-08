@@ -22,6 +22,8 @@ class Shop extends CI_Controller
             'all_package' => $paket
         ];
 
+
+
         $this->load->view('arealama_template/header', $data);
         $this->load->view('arealama/shop');
         $this->load->view('arealama_template/footer');
@@ -215,6 +217,25 @@ class Shop extends CI_Controller
 
         $this->load->view('arealama_template/header');
         $this->load->view('arealama/history_pesanan', $data);
+        $this->load->view('arealama_template/footer');
+    }
+
+    public function detail_produk($id_barang)
+    {
+
+        $barangs = $this->db->get_where('barang', ['id_barang' => $id_barang])->row_array();
+        $barangs_ex =  $this->db->get_where('barang', ['id_barang !=' => $id_barang])->result_array();
+
+
+        $data = [
+            'barangs' => $barangs,
+            'barangs_ex' => $barangs_ex
+        ];
+
+
+
+        $this->load->view('arealama_template/header');
+        $this->load->view('arealama/detail_produk', $data);
         $this->load->view('arealama_template/footer');
     }
 }
