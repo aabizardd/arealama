@@ -115,6 +115,31 @@ class Admin_model extends CI_model
         return $this->db->get();
     }
 
+    public function get_limit_dataapembeli($table, $limit, $start, $keyword = null)
+    {
+
+        // if ($keyword) {
+        //     $this->db->like('nama_lengkap', $keyword);
+        // }
+
+        // $this->db->order_by('id_admin', 'DESC');
+        // return $this->db->get($table, $limit, $start);
+
+        $this->db->select('*');
+        $this->db->from('konsumen');
+        // $this->db->join('tb_user', 'tb_admin.id_user = tb_user.id_user');
+        // $this->db->where('id_role', 1);
+        if ($keyword) {
+            $this->db->like('username', $keyword);
+        }
+
+        $this->db->order_by('id', 'DESC');
+        $this->db->limit($limit, $start);
+
+        return $this->db->get();
+    }
+
+
     // public function get_limit_praktikan($table, $limit, $start, $keyword = null, $id_kelas)
     // {
 

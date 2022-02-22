@@ -44,6 +44,8 @@
     </li>
 
 
+
+
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#kelolaAdmin" aria-expanded="true"
@@ -60,6 +62,24 @@
             </div>
         </div>
     </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#kelolapembeli" aria-expanded="true"
+            aria-controls="kelolapembeli">
+            <i class="fas fa-users-cog"></i>
+            <span>Kelola Data Pembeli</span>
+        </a>
+        <div id="kelolapembeli" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Kelola Data Pembeli:</h6>
+                <!-- <a class="collapse-item" href="utilities-color.html">Lihat Data Praktikan</a> -->
+                <a class="collapse-item" href="<?= base_url('Admin_kelolapembeli') ?>">Tambah Data Pembeli</a>
+
+            </div>
+        </div>
+    </li>
+
 
 
     <!-- Divider -->

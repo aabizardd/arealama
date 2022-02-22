@@ -19,10 +19,10 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">List Data Admin</h1>
+                        <h1 class="h3 mb-0 text-gray-800">List Data Pembeli</h1>
 
 
-                        <form action="<?= base_url('Admin_kelolaadmin'); ?>" method="post">
+                        <form action="<?= base_url('Admin_kelolapembeli'); ?>" method="post">
                             <div class="row mt-2">
                                 <div class="col-9">
                                     <input type="text" class="form-control" placeholder="Keyword..." autocomplete="off"
@@ -51,7 +51,7 @@
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary mb-2" data-toggle="modal"
                                 data-target="#exampleModal"><i class="fas fa-plus"></i>
-                                Tambah Data Admin
+                                Tambah Data Pembeli
                             </button>
 
                             <div class="row">
@@ -83,25 +83,20 @@
                                                 aria-labelledby="dropdownMenuLink">
                                                 <div class="dropdown-header">Dropdown Header:</div>
 
-                                                <?php if ($class['id_admin'] == $this->session->userdata('id_admin')) : ?>
-
-
-                                                <?php else : ?>
 
                                                 <a class="btn btn-danger dropdown-item tombol-hapus mt-2"
                                                     id="tombol-hapus" type="button"
-                                                    href="<?= base_url('admin_kelolaadmin/hapus_admin/') . $class['id_admin'] ?>"><span
+                                                    href="<?= base_url('admin_kelolapembeli/hapus_pembeli/') . $class['id'] ?>"><span
                                                         style="color: red;"><i class="fas fa-trash"></i></span>
                                                     Hapus
                                                 </a>
 
                                                 <a class="btn btn-success dropdown-item mt-2" type="button"
-                                                    href="<?= base_url('admin_kelolaadmin/edit/') . $class['id_admin'] ?>"><span
+                                                    href="<?= base_url('admin_kelolapembeli/edit/') . $class['id'] ?>"><span
                                                         style="color: green;"><i class="fas fa-edit"></i></span>
                                                     Edit
                                                 </a>
 
-                                                <?php endif; ?>
 
 
 
@@ -111,20 +106,13 @@
                                         </div>
 
                                         <img class=" card-img-top"
-                                            src="<?= base_url('assets_praktikum/img_profile/admin/') . $class['foto_profile'] ?>"
+                                            src="<?= base_url('assets_arealama/img_profile/') . $class['foto'] ?>"
                                             alt="Card image cap" style="height: 250px;">
                                         <div class="card-body">
                                             <p class="card-title">
                                                 <strong class="text-justify">
-                                                    <?php if ($class['id_admin'] == $this->session->userdata('id_admin')) : ?>
 
-                                                    <?= $class['nama_admin'] . " (Me)" ?>
-
-                                                    <?php else : ?>
-
-                                                    <?= $class['nama_admin'] ?>
-
-                                                    <?php endif; ?>
+                                                    <?= $class['nama'] ?>
 
 
                                                 </strong>
@@ -215,7 +203,7 @@
 
     <!-- Modal Tambah -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Tambah Data Admin</h5>
@@ -223,7 +211,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="<?= base_url('admin_kelolaadmin/tambah_admin') ?>" method="POST">
+                <form action="<?= base_url('admin_kelolapembeli/tambah_pembeli') ?>" method="POST">
                     <div class="modal-body">
 
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -255,6 +243,13 @@
                                 placeholder="Masukkan Email">
                             <small><i class="text-danger">* Data Email tidak boleh sama dengan yang sudah
                                     ada</i></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">No Hp</label>
+                            <input type="number" class="form-control" name="no_hp" id="no_hp"
+                                placeholder="Masukkan Nomor Handphone">
+
                         </div>
 
                         <div class="form-group">

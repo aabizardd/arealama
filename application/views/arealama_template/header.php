@@ -112,7 +112,8 @@
 
                         <img class="ml-3" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false"
-                            src="<?= base_url('assets_arealama/user_default.png')  ?>" width="30" height="30" alt="">
+                            src="<?= base_url('assets_arealama/img_profile/user_default.png')  ?>" width="30"
+                            height="30" alt="">
 
                         <?php if (!$this->session->userdata('id_konsumen')) : ?>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

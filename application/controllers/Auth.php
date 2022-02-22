@@ -70,21 +70,21 @@ class Auth extends CI_Controller
                     $pesan = $this->alert('Maaf!', 'danger', "Password Salah!");
                     $this->session->set_flashdata('alert', $pesan);
 
-                    redirect('auth');
+                    redirect('auth_admin');
                 }
             } else {
 
                 $pesan = $this->alert('Maaf!', 'danger', "Email dengan Username tersebut belum aktif!");
                 $this->session->set_flashdata('alert', $pesan);
 
-                redirect('auth');
+                redirect('auth_admin');
             }
         } else {
 
             $pesan = $this->alert('Maaf!', 'danger', "Username belum terdaftar!");
             $this->session->set_flashdata('alert', $pesan);
 
-            redirect('auth');
+            redirect('auth_admin');
         }
     }
 

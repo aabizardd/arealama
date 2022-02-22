@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2022 at 02:42 PM
+-- Generation Time: Feb 22, 2022 at 03:25 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -33,7 +33,7 @@ CREATE TABLE `admin` (
   `username` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL,
-  `foto_profile` varchar(250) NOT NULL,
+  `foto_profile` varchar(250) NOT NULL DEFAULT 'default.jpg',
   `status_active` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,8 +42,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `email`, `password`, `foto_profile`, `status_active`) VALUES
-(1, 'Admin Arealama (Azhyra)', 'admin2', 'azhyra@gmail.com', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', '60b780fd4ac13.jpg', 1),
-(2, 'Admin Arealama (Azhyra)', 'admin1', 'azhyra2@gmail.com', '$2y$10$vX.ls95e59u559eOQOJyn.TLaMbjKs4idvn3RanxG5IEEqSUn4lQC', 'default.jpg', 1);
+(1, 'Admin', 'admin', 'azhyra2@gmail.com', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', 'default.jpg', 1),
+(2, 'Admin 1', 'admin1', 'azhyra2@gmail.com', '$2y$10$vX.ls95e59u559eOQOJyn.TLaMbjKs4idvn3RanxG5IEEqSUn4lQC', '62070a10181c8.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -103,6 +103,14 @@ CREATE TABLE `cart` (
   `qty` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `id_konsumen`, `id_barang`, `qty`) VALUES
+(9, 9, 10, 1),
+(10, 9, 11, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -125,7 +133,7 @@ CREATE TABLE `konsumen` (
 --
 
 INSERT INTO `konsumen` (`id`, `username`, `nama`, `email`, `no_telp`, `foto`, `password`, `status_aktif`) VALUES
-(9, 'test', NULL, 'abizard@student.telkomuniversity.ac.id', NULL, 'user_default.png', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', 1);
+(9, 'test', 'Muhammad Abizard', 'abizard@student.telkomuniversity.ac.id', '081386397855', '62070b374d0b5.jpg', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', 1);
 
 -- --------------------------------------------------------
 
@@ -229,7 +237,7 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `barang`
@@ -247,13 +255,13 @@ ALTER TABLE `barang_checkout`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `konsumen`
 --
 ALTER TABLE `konsumen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
