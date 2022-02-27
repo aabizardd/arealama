@@ -139,6 +139,18 @@ class Admin_model extends CI_model
         return $this->db->get();
     }
 
+    public function get_jml_pesanan($bulan, $tahun)
+    {
+
+        $this->db->select('count(id_transaksi) jml');
+        $this->db->from('transaksi');
+        $this->db->where('MONTH(tgl_transaksi)', $bulan);
+        $this->db->where('YEAR(tgl_transaksi)', $tahun);
+
+
+        return $this->db->get()->row_array();
+    }
+
 
     // public function get_limit_praktikan($table, $limit, $start, $keyword = null, $id_kelas)
     // {
@@ -220,5 +232,27 @@ class Admin_model extends CI_model
         $this->db->like('link', $nama);
 
         return $this->db->get();
+    }
+
+    public function get_pesanan_konsumen()
+    {
+        $this->db->select('*');
+        $this->db->from('transaksi tr');
+        $this->db->join('konsumen ks', 'tr.id_konsumen = ks.id');
+        $this->db->join('status_transaksi st', 'tr.status = st.id');
+
+        return $this->db->get();
+        // $this->db->like('link', $nama);
+    }
+
+    public function get_pesanan_barang($id_transaksi)
+    {
+        $this->db->select('*');
+        $this->db->from('barang_checkout bc');
+        $this->db->join('barang br', 'bc.id_barang = br.id_barang');
+        $this->db->where('bc.id_transaksi', $id_transaksi);
+
+        return $this->db->get();
+        // $this->db->like('link', $nama);
     }
 }

@@ -15,11 +15,11 @@
 
 
 <!-- Page level plugins -->
-<!-- <script src="<?= base_url('assets_template/') ?>vendor/chart.js/Chart.min.js"></script> -->
+<script src="<?= base_url('assets_template/') ?>vendor/chart.js/Chart.min.js"></script>
 
 <!-- Page level custom scripts -->
-<!-- <script src="<?= base_url('assets_template/') ?>js/demo/chart-area-demo.js"></script>
-<script src="<?= base_url('assets_template/') ?>js/demo/chart-pie-demo.js"></script> -->
+<!-- <script src="<?= base_url('assets_template/') ?>js/demo/chart-area-demo.js"></script> -->
+<script src="<?= base_url('assets_template/') ?>js/demo/chart-pie-demo.js"></script>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -172,8 +172,32 @@ $('.tombol-aktif').on('click', function(e) {
 <script src="<?= base_url('assets_template/') ?>vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets_template/') ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
+
 <!-- Page level custom scripts -->
-<script src="<?= base_url('assets_template/') ?>js/demo/datatables-demo.js"></script>
+<!-- <script src="<?= base_url('assets_template/') ?>js/demo/datatables-demo.js"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script> -->
+<script type="text/javascript"
+    src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/datatables.min.js">
+</script>
+
+
+<script>
+$(document).ready(function() {
+    $('#dataTable').DataTable({
+
+        dom: 'Bfrtip',
+        responsive: true,
+        pageLength: 25,
+        // lengthMenu: [0, 5, 10, 20, 50, 100, 200, 500],
+
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+
+    });
+});
+</script>
 
 
 

@@ -81,6 +81,15 @@
     </li>
 
 
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('Admin_kelolapesanan') ?>">
+            <i class="fas fa-file-invoice"></i>
+            <span>Kelola Data Pesanan</span>
+        </a>
+
+    </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

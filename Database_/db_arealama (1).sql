@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2022 at 03:25 PM
+-- Generation Time: Feb 27, 2022 at 05:00 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -103,14 +103,6 @@ CREATE TABLE `cart` (
   `qty` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id`, `id_konsumen`, `id_barang`, `qty`) VALUES
-(9, 9, 10, 1),
-(10, 9, 11, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -133,7 +125,30 @@ CREATE TABLE `konsumen` (
 --
 
 INSERT INTO `konsumen` (`id`, `username`, `nama`, `email`, `no_telp`, `foto`, `password`, `status_aktif`) VALUES
-(9, 'test', 'Muhammad Abizard', 'abizard@student.telkomuniversity.ac.id', '081386397855', '62070b374d0b5.jpg', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', 1);
+(9, 'test', 'Muhammad Abizard', 'abizard@student.telkomuniversity.ac.id', '081386397855', '62070b374d0b5.jpg', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', 1),
+(12, 'test2', NULL, 'm.abizard1123@gmail.com', NULL, 'user_default.png', '$2y$10$gjYsKNL5SdmMplLhYbttRObmXmj1VQ3SdwDHempxU7KGADCxwqqtm', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status_transaksi`
+--
+
+CREATE TABLE `status_transaksi` (
+  `id` int(11) NOT NULL,
+  `nama_status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `status_transaksi`
+--
+
+INSERT INTO `status_transaksi` (`id`, `nama_status`) VALUES
+(0, 'Pesanan sedang diperiksa'),
+(1, 'Pesanan Disetujui'),
+(2, 'Pesanan Dikirim'),
+(3, 'Pesanan Diterima'),
+(4, 'Pesanan ditolak');
 
 -- --------------------------------------------------------
 
@@ -148,6 +163,7 @@ CREATE TABLE `transaksi` (
   `nama_belakang` varchar(250) NOT NULL,
   `alamat` text NOT NULL,
   `no_hp` varchar(250) NOT NULL,
+  `tgl_transaksi` timestamp NOT NULL DEFAULT current_timestamp(),
   `jasa_pengiriman` varchar(250) DEFAULT NULL,
   `nomor_resi` varchar(250) DEFAULT NULL,
   `total` int(250) NOT NULL,
@@ -159,8 +175,8 @@ CREATE TABLE `transaksi` (
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`id_transaksi`, `id_konsumen`, `nama_depan`, `nama_belakang`, `alamat`, `no_hp`, `jasa_pengiriman`, `nomor_resi`, `total`, `bukti_bayar`, `status`) VALUES
-(4, 9, 'Azhyra', 'Rana', 'asdfasd', '1312312', NULL, NULL, 1312312, 'materi62011a9b7784b.jpg', 0);
+INSERT INTO `transaksi` (`id_transaksi`, `id_konsumen`, `nama_depan`, `nama_belakang`, `alamat`, `no_hp`, `tgl_transaksi`, `jasa_pengiriman`, `nomor_resi`, `total`, `bukti_bayar`, `status`) VALUES
+(4, 9, 'Azhyra', 'Rana', 'asdfasd', '1312312', '2022-02-27 03:34:32', NULL, NULL, 1312312, 'materi62011a9b7784b.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -181,7 +197,9 @@ CREATE TABLE `user_token` (
 
 INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
 (1, 'm.abizard1123@gmail.com', 'qZjbA1UVCEPGtOchzllszr0Yqf7mOGOMrWzYlyS/oLc=', '1642905501'),
-(6, 'abizard@student.telkomuniversity.ac.id', '859gfw6n/I2ckojtM2u3hijiVpF/PuKOE50czhEFDdk=', '1642910724');
+(6, 'abizard@student.telkomuniversity.ac.id', '859gfw6n/I2ckojtM2u3hijiVpF/PuKOE50czhEFDdk=', '1642910724'),
+(7, 'm.abizard1123@gmail.com', 't4oKV8aQsOZHp3z5QgCVNIQS5rLnIkKdL+IxbeqUxuU=', '1645844326'),
+(8, 'm.abizard1123@gmail.com', 'skEywWhHADafpsB7v3QYScWQSDSrmn4nGvXQYoP/xyg=', '1645845174');
 
 --
 -- Indexes for dumped tables
@@ -215,6 +233,12 @@ ALTER TABLE `cart`
 -- Indexes for table `konsumen`
 --
 ALTER TABLE `konsumen`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `status_transaksi`
+--
+ALTER TABLE `status_transaksi`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -261,7 +285,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `konsumen`
 --
 ALTER TABLE `konsumen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
@@ -273,7 +297,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

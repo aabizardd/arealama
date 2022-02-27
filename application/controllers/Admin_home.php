@@ -32,6 +32,25 @@ class Admin_home extends CI_Controller
         $data['test'] = "hello";
         $data['jml_barang'] = $this->db->get('barang')->num_rows();
 
+        $year = date("Y");
+        $data['tahun'] = $year;
+
+        $data_pesanan = [
+            'jan' => $this->Admin_model->get_jml_pesanan(1, $year),
+            'feb' => $this->Admin_model->get_jml_pesanan(2, $year),
+            'mar' => $this->Admin_model->get_jml_pesanan(3, $year),
+            'apr' => $this->Admin_model->get_jml_pesanan(4, $year),
+            'mei' => $this->Admin_model->get_jml_pesanan(5, $year),
+            'jun' => $this->Admin_model->get_jml_pesanan(6, $year),
+            'jul' => $this->Admin_model->get_jml_pesanan(7, $year),
+            'agu' => $this->Admin_model->get_jml_pesanan(8, $year),
+            'sep' => $this->Admin_model->get_jml_pesanan(9, $year),
+            'okt' => $this->Admin_model->get_jml_pesanan(10, $year),
+            'nov' => $this->Admin_model->get_jml_pesanan(11, $year),
+            'des' => $this->Admin_model->get_jml_pesanan(12, $year),
+        ];
+
+
         // $data['jumlah_praktikan'] = $this->Asprak_model->count_all_results('tb_praktikan');
         // $data['jumlah_modul'] = $this->Asprak_model->count_all_results('tb_praktikum');
         // $data['jumlah_kelas'] = $this->Asprak_model->count_all_results('tb_kelas');
@@ -39,6 +58,7 @@ class Admin_home extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('admin/home', $data);
         $this->load->view('template/footer');
+        $this->load->view('graph/graph_area_bulanan', $data_pesanan);
     }
 
     public function logout()
