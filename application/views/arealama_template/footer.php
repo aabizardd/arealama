@@ -115,6 +115,7 @@ eval(mod_pagespeed__0kegk3Rgl);
 <script src="<?= base_url('assets_arealama/') ?>js/main.js"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+
 <script>
 window.dataLayer = window.dataLayer || [];
 
@@ -125,12 +126,15 @@ gtag('js', new Date());
 
 gtag('config', 'UA-23581568-13');
 </script>
+
 <script defer src="../../../static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"rayId":"656db7dcbc9bdddf","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.5.2","si":10}'>
 </script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
 </script>
@@ -138,6 +142,7 @@ gtag('config', 'UA-23581568-13');
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <script src="<?= base_url('assets_arealama/') ?>js/resi.js"></script>
+
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js">
 </script>
 
