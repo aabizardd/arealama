@@ -132,8 +132,8 @@ class Auth_User extends CI_Controller
         $config = [
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_user' => 'geografilaboratorium@gmail.com',
-            'smtp_pass' => 'GEOLABums22',
+            'smtp_user' => 'badrisale.afa@gmail.com',
+            'smtp_pass' => 'daftar123',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
@@ -236,7 +236,6 @@ class Auth_User extends CI_Controller
         }
     }
 
-
     public function logout()
     {
 
@@ -245,7 +244,6 @@ class Auth_User extends CI_Controller
         // $this->session->set_flashdata('message', $this->alert_dismiss('success', "Youre logout"));
         redirect('');
     }
-
 
     public function alert($kata_depan = "", $warna = "", $isi = "")
     {

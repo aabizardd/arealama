@@ -61,10 +61,6 @@ $route['checkout'] = 'Shop/checkout/';
 $route['history'] = 'Shop/history_pesanan/';
 $route['detail_produk/(:num)'] = 'Shop/detail_produk/$1';
 
-
-
-
-
 $route['default_controller'] = 'Welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
