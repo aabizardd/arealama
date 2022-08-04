@@ -52,8 +52,6 @@ class Welcome extends CI_Controller
             'total_cart' => $total,
         ];
 
-
-
         $this->load->view('arealama_template/header', $data);
         $this->load->view('arealama/basket');
         $this->load->view('arealama_template/footer');
@@ -85,7 +83,6 @@ class Welcome extends CI_Controller
     public function update_cart()
     {
 
-
         $id_cart = $this->input->post('id_cart');
         $qty = $this->input->post('qty');
 
@@ -98,7 +95,7 @@ class Welcome extends CI_Controller
             ];
 
             $data = [
-                'qty' => $qty[$key]
+                'qty' => $qty[$key],
             ];
 
             // var_dump($qty[$key]);
@@ -115,10 +112,9 @@ class Welcome extends CI_Controller
     public function delete_cart($id)
     {
         $where = [
-            'id' => $id
+            'id' => $id,
         ];
         $this->konsumen->delete('cart', $where);
-
 
         redirect('cart');
     }

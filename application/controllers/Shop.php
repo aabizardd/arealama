@@ -12,17 +12,14 @@ class Shop extends CI_Controller
         $this->load->model('Konsumen_model', 'konsumen');
     }
 
-
     public function index()
     {
 
         $paket = $this->db->get("barang")->result_array();
 
         $data = [
-            'all_package' => $paket
+            'all_package' => $paket,
         ];
-
-
 
         $this->load->view('arealama_template/header', $data);
         $this->load->view('arealama/shop');
@@ -38,18 +35,17 @@ class Shop extends CI_Controller
 
         $where1 = [
             'id_barang' => $id_barang,
-            'id_konsumen' => $id_konsumen
+            'id_konsumen' => $id_konsumen,
         ];
 
         $isAlreadyIn = $this->db->get_where('cart', $where1)->num_rows();
         $dataCart = $this->db->get_where('cart', $where1)->row_array();
 
-
         if ($isAlreadyIn >= 1) {
 
             $where = [
                 'id_konsumen' => $id_konsumen,
-                'id_barang' => $id_barang
+                'id_barang' => $id_barang,
             ];
 
             $data = [
@@ -61,7 +57,7 @@ class Shop extends CI_Controller
 
             $data = [
                 'id_barang' => $id_barang,
-                'id_konsumen' => $id_konsumen
+                'id_konsumen' => $id_konsumen,
             ];
 
             $this->db->insert('cart', $data);
@@ -77,11 +73,14 @@ class Shop extends CI_Controller
         $cart = $this->konsumen->get_cart_detail($id_konsumen);
         $total = $this->konsumen->total_cart($id_konsumen);
 
-        // $data_cart = 
+        // $data_cart =
+
+        $ongkir = $this->db->get('ongkir')->result();
 
         $data = [
             'carts' => $cart,
             'total_cart' => $total,
+            'ongkir' => $ongkir,
         ];
 
         $this->load->view('arealama_template/header');
@@ -97,6 +96,7 @@ class Shop extends CI_Controller
         $no_hp = $this->input->post('no_hp');
         $bukti_bayar = $this->_upload();
         $id_konsumen = $this->session->userdata('id_konsumen');
+        $total = $this->konsumen->total_cart($id_konsumen);
 
         $data_transaksi = [
             'id_konsumen' => $id_konsumen,
@@ -104,13 +104,12 @@ class Shop extends CI_Controller
             'nama_belakang' => $nama_belakang,
             'alamat' => $alamat,
             'no_hp' => $no_hp,
-            'total' => $no_hp,
+            'total' => $total['total'],
             'bukti_bayar' => $bukti_bayar,
         ];
 
         $this->db->insert('transaksi', $data_transaksi);
         $id_transaksi = $this->db->insert_id();
-
 
         $cart = $this->konsumen->get_cart_detail($id_konsumen);
 
@@ -119,14 +118,13 @@ class Shop extends CI_Controller
             $data = [
                 'id_barang' => $c['id_barang'],
                 'qty' => $c['qty'],
-                'id_transaksi' => $id_transaksi
+                'id_transaksi' => $id_transaksi,
             ];
 
             $this->db->insert('barang_checkout', $data);
         }
 
         $this->db->delete('cart', array('id_konsumen' => $id_konsumen));
-
 
         $flahdata = $this->alert('Berhasil!', 'success', 'Pesanan kamu sedang diproses');
 
@@ -147,11 +145,8 @@ class Shop extends CI_Controller
         $type = $_FILES['bukti_bayar']['type'];
         $eror = $_FILES['bukti_bayar']['error'];
 
-
-
         // $nama_file = str_replace(" ", "_", $namaFiles);
         $tmpName = $_FILES['bukti_bayar']['tmp_name'];
-
 
         if ($eror === 4) {
             $flahdata = $this->alert('Maaf!', 'danger', 'Belum memilih gambar');
@@ -165,7 +160,6 @@ class Shop extends CI_Controller
         $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
 
         $ekstensiGambar = explode('.', $namaFiles);
-
 
         $ekstensiGambar = strtolower(end($ekstensiGambar));
         if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
@@ -189,8 +183,6 @@ class Shop extends CI_Controller
     public function alert($kata_depan = "", $warna = "", $isi = "")
     {
 
-
-
         $alert = '<div class="alert alert-' . $warna . ' alert-dismissible fade show" role="alert">
         <strong>' . $kata_depan . '</strong> ' . $isi . '
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -212,7 +204,7 @@ class Shop extends CI_Controller
         $transaksi = $this->konsumen->get_transaction_detail($id_konsumen);
 
         $data = [
-            'transaksi' => $transaksi
+            'transaksi' => $transaksi,
         ];
 
         $this->load->view('arealama_template/header');
@@ -224,15 +216,12 @@ class Shop extends CI_Controller
     {
 
         $barangs = $this->db->get_where('barang', ['id_barang' => $id_barang])->row_array();
-        $barangs_ex =  $this->db->get_where('barang', ['id_barang !=' => $id_barang])->result_array();
-
+        $barangs_ex = $this->db->get_where('barang', ['id_barang !=' => $id_barang])->result_array();
 
         $data = [
             'barangs' => $barangs,
-            'barangs_ex' => $barangs_ex
+            'barangs_ex' => $barangs_ex,
         ];
-
-
 
         $this->load->view('arealama_template/header');
         $this->load->view('arealama/detail_produk', $data);

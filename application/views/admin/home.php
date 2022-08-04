@@ -3,7 +3,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "sidebar.php"; ?>
+        <?php include "sidebar.php";?>
 
 
         <!-- Content Wrapper -->
@@ -12,7 +12,7 @@
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "topbar.php"; ?>
+                <?php include "topbar.php";?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -34,13 +34,13 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Jumlah User</div>
+                                                Jumlah Konsumen</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                User
+                                                <?=$jml_user?>
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-book fa-2x text-gray-300"></i>
+                                            <i class="fas fa-users fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -54,9 +54,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Jumlah Transaksi</div>
+                                                Jumlah Admin</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                Transaksi
+                                                <?=$jml_admin?>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -68,7 +68,7 @@
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <!-- <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-info shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
@@ -96,7 +96,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Jumlah Barang</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jml_barang ?>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$jml_barang?>
                                                 Barang</div>
                                         </div>
                                         <div class="col-auto">
@@ -119,7 +119,7 @@
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Grafik Penjualan Perbulan (Tahun
-                                        <?= $tahun ?>)</h6>
+                                        <?=$tahun?>)</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -381,7 +381,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('admin_home/logout') ?>">Logout</a>
+                    <a class="btn btn-primary" href="<?=base_url('admin_home/logout')?>">Logout</a>
                 </div>
             </div>
         </div>

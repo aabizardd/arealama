@@ -96,6 +96,7 @@ class Admin_listbarang extends CI_Controller
 
         $nama_barang = $this->input->post('nama_barang');
         $harga = $this->input->post('harga');
+        $stok = $this->input->post('stok');
         $deskripsi_lainnya = $this->input->post('deskripsi_lainnya');
         $link = $this->input->post('link');
         $foto_bahan_lama = $this->input->post('foto_bahan');
@@ -117,6 +118,7 @@ class Admin_listbarang extends CI_Controller
             $data = [
                 'nama_barang' => $nama_barang,
                 'harga' => $harga,
+                'stok' => $stok,
                 'deskripsi_lainnya' => $deskripsi_lainnya,
                 'link' => $link,
                 'foto_barang' => $this->_uploadFile($id_barang, $file),
@@ -126,6 +128,7 @@ class Admin_listbarang extends CI_Controller
             $data = [
                 'nama_barang' => $nama_barang,
                 'harga' => $harga,
+                'stok' => $stok,
                 'deskripsi_lainnya' => $deskripsi_lainnya,
                 'link' => $link,
                 'foto_barang' => $foto_bahan_lama,

@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <form action="<?= base_url('welcome/update_cart') ?>" method="POST">
+                <form action="<?=base_url('welcome/update_cart')?>" method="POST">
                     <div class="shopping__cart__table">
                         <table>
                             <thead>
@@ -32,37 +32,37 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($carts as $c) : ?>
+                                <?php foreach ($carts as $c): ?>
 
                                 <tr>
                                     <td class="product__cart__item">
                                         <div class="product__cart__item__pic">
-                                            <img src="<?= base_url('assets_praktikum/img_bahan_modul/' . $c['foto_barang']) ?>"
+                                            <img src="<?=base_url('assets_praktikum/img_bahan_modul/' . $c['foto_barang'])?>"
                                                 alt="" width="100">
                                         </div>
                                         <div class="product__cart__item__text">
-                                            <h6><?= $c['nama_barang'] ?></h6>
-                                            <h5><?= 'Rp ' . number_format($c['harga'], 2, ",", ".") ?></h5>
+                                            <h6><?=$c['nama_barang']?></h6>
+                                            <h5><?='Rp ' . number_format($c['harga'], 2, ",", ".")?></h5>
                                         </div>
                                     </td>
                                     <td class="quantity__item">
                                         <div class="quantity">
                                             <div class="pro-qty-2">
-                                                <input type="number" name="qty[]" value="<?= $c['qty'] ?>" min="1">
+                                                <input type="number" name="qty[]" value="<?=$c['qty']?>" min="1">
                                             </div>
                                         </div>
                                     </td>
                                     <td class="cart__price">
-                                        <?= 'Rp ' . number_format($c['harga'] * $c['qty'], 2, ",", ".") ?></td>
+                                        <?='Rp ' . number_format($c['harga'] * $c['qty'], 2, ",", ".")?></td>
                                     <td class="cart__close">
-                                        <a href="<?= base_url('delete_cart/' . $c['id']) ?>"><i
+                                        <a href="<?=base_url('delete_cart/' . $c['id'])?>"><i
                                                 class="fa fa-close"></i></a>
                                     </td>
                                 </tr>
 
-                                <input type="hidden" name="id_cart[]" value="<?= $c['id'] ?>">
+                                <input type="hidden" name="id_cart[]" value="<?=$c['id']?>">
 
-                                <?php endforeach ?>
+                                <?php endforeach?>
 
                             </tbody>
                         </table>
@@ -70,7 +70,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn">
-                                <a href="#">Continue Shopping</a>
+                                <a href="<?=base_url('shop')?>">Continue Shopping</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -99,10 +99,10 @@
                     <ul>
 
                         <li>Total
-                            <span><?= 'Rp ' . number_format($total_cart['total'], 2, ",", ".") ?></span>
+                            <span><?='Rp ' . number_format($total_cart['total'], 2, ",", ".")?></span>
                         </li>
                     </ul>
-                    <a href="<?= base_url('checkout')  ?>" class="primary-btn">Proceed to checkout</a>
+                    <a href="<?=base_url('checkout')?>" class="primary-btn">Proceed to checkout</a>
                 </div>
             </div>
         </div>

@@ -55,8 +55,6 @@ class Konsumen_model extends CI_model
         return $this->db->update($table, $data, $where);
     }
 
-
-
     public function get_limit_dataadmin($table, $limit, $start, $keyword = null)
     {
 
@@ -173,6 +171,5 @@ class Konsumen_model extends CI_model
     //     // $this->db->limit(2, 0);
     //     return $this->db->get();
     // }
-
 
 }

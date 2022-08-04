@@ -8,18 +8,18 @@
 
 
 <!-- Core plugin JavaScript-->
-<script src="<?= base_url('assets_template/') ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<?=base_url('assets_template/')?>vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="<?= base_url('assets_template/') ?>js/sb-admin-2.min.js"></script>
+<script src="<?=base_url('assets_template/')?>js/sb-admin-2.min.js"></script>
 
 
 <!-- Page level plugins -->
-<script src="<?= base_url('assets_template/') ?>vendor/chart.js/Chart.min.js"></script>
+<script src="<?=base_url('assets_template/')?>vendor/chart.js/Chart.min.js"></script>
 
 <!-- Page level custom scripts -->
-<!-- <script src="<?= base_url('assets_template/') ?>js/demo/chart-area-demo.js"></script> -->
-<script src="<?= base_url('assets_template/') ?>js/demo/chart-pie-demo.js"></script>
+<!-- <script src="<?=base_url('assets_template/')?>js/demo/chart-area-demo.js"></script> -->
+<script src="<?=base_url('assets_template/')?>js/demo/chart-pie-demo.js"></script>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -58,7 +58,7 @@ $('.editbahan').on('click', function(e) {
     $("#modal-view #keterangan").val(keterangan_bahan);
     $("#modal-view #id_bahan").val(id_bahan);
     $("#modal-view #foto_old").val(foto_bahan);
-    $("#modal-view #gambar").attr('src', '<?= base_url('assets_praktikum/img_bahan_modul/') ?>' + foto_bahan);
+    $("#modal-view #gambar").attr('src', '<?=base_url('assets_praktikum/img_bahan_modul/')?>' + foto_bahan);
 
 
 });
@@ -81,9 +81,9 @@ $('.edit-kelas').on('click', function(e) {
 
 
 
-<script src="<?= base_url('assets_template/js/sweetalert/sweetalert2.all.min.js') ?>">
+<script src="<?=base_url('assets_template/js/sweetalert/sweetalert2.all.min.js')?>">
 </script>
-<script type="text/javascript" src="<?= base_url('assets_template/js/sweetalert/myscript.js') ?>">
+<script type="text/javascript" src="<?=base_url('assets_template/js/sweetalert/myscript.js')?>">
 </script>
 
 <script>
@@ -169,12 +169,12 @@ $('.tombol-aktif').on('click', function(e) {
 </script>
 
 <!-- Page level plugins -->
-<script src="<?= base_url('assets_template/') ?>vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="<?= base_url('assets_template/') ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<?=base_url('assets_template/')?>vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?=base_url('assets_template/')?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 
 <!-- Page level custom scripts -->
-<!-- <script src="<?= base_url('assets_template/') ?>js/demo/datatables-demo.js"></script> -->
+<!-- <script src="<?=base_url('assets_template/')?>js/demo/datatables-demo.js"></script> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script> -->
 <script type="text/javascript"

@@ -83,6 +83,11 @@
 												<span aria-hidden="true">&times;</span>
 												</button></div>');?>
 
+                                                    <?=form_error('stok', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+													</button></div>');?>
+
                                                     <?=form_error('deskripsi_lainnya', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 												<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 												<span aria-hidden="true">&times;</span>
@@ -117,6 +122,15 @@ $harga = "Rp " . number_format($detail_barang['harga'], 0, ',', '.');
                                                                 autocomplete="off" value="<?=$harga?>">
                                                             <small class="text-info"><i>Contoh penulisan:
                                                                     Rp. 250.000</i></small>
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Stok</label>
+                                                            <input type="number" class="form-control" name="stok"
+                                                                autocomplete="off" value="<?=$detail_barang['stok']?>"
+                                                                min=1>
+
                                                         </div>
 
 

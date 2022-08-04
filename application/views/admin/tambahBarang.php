@@ -3,7 +3,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "sidebar.php"; ?>
+        <?php include "sidebar.php";?>
 
 
         <!-- Content Wrapper -->
@@ -12,7 +12,7 @@
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "topbar.php"; ?>
+                <?php include "topbar.php";?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid mb-5">
@@ -26,8 +26,8 @@
 
                     </div>
 
-                    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
-                    <div class="flash-data-error" data-flashdata="<?= $this->session->flashdata('flash-error'); ?>">
+                    <div class="flash-data" data-flashdata="<?=$this->session->flashdata('flash');?>"></div>
+                    <div class="flash-data-error" data-flashdata="<?=$this->session->flashdata('flash-error');?>">
                     </div>
 
                     <!-- Content Row -->
@@ -62,7 +62,7 @@
                                             <div class="row mt-2">
                                                 <div class="col-sm-4 mt-3">
 
-                                                    <img src="<?= base_url('assets_praktikum/') ?>img_barang_def/default.png"
+                                                    <img src="<?=base_url('assets_praktikum/')?>img_barang_def/default.png"
                                                         alt="" class="rounded mx-auto d-block img-preview" width="100%"
                                                         height="400" id="gambar">
 
@@ -70,27 +70,33 @@
 
                                                 <div class="col-sm-6 mt-2">
 
-                                                    <?= form_error('nama_barang', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?=form_error('nama_barang', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>'); ?>
+													</button></div>');?>
 
-                                                    <?= form_error('harga', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?=form_error('harga', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>'); ?>
+													</button></div>');?>
 
-                                                    <?= form_error('deskripsi_lainnya', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?=form_error('stok', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>'); ?>
+													</button></div>');?>
 
-                                                    <?= form_error('link', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+
+                                                    <?=form_error('deskripsi_lainnya', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>'); ?>
+													</button></div>');?>
 
-                                                    <form method="POST" action="<?= base_url('admin_tambahbarang/') ?>"
+                                                    <?=form_error('link', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+													</button></div>');?>
+
+                                                    <form method="POST" action="<?=base_url('admin_tambahbarang/')?>"
                                                         enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Nama Barang</label>
@@ -105,6 +111,13 @@
                                                                 autocomplete="off" value="">
                                                             <small class="text-info"><i>Contoh penulisan:
                                                                     Rp. 290.000</i></small>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Stok</label>
+                                                            <input type="number" class="form-control" name="stok"
+                                                                autocomplete="off" value="" min=1>
+
                                                         </div>
 
 
@@ -202,7 +215,7 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="<?= base_url('admin_home/logout') ?>">Logout</a>
+                            <a class="btn btn-primary" href="<?=base_url('admin_home/logout')?>">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -224,7 +237,7 @@
                             <div class="row">
                                 <div class="col-sm-5">
 
-                                    <img src="<?= base_url('assets_praktikum/img_lain/no_file.png') ?>" alt=""
+                                    <img src="<?=base_url('assets_praktikum/img_lain/no_file.png')?>" alt=""
                                         class="rounded mx-auto d-block img-preview" width="300" height="300"
                                         id="gambar">
 
@@ -232,7 +245,7 @@
 
                                 <div class="col-sm-7 mt-2">
 
-                                    <form method="POST" action="<?= base_url('admin_listmodul/update_bahan/') ?>"
+                                    <form method="POST" action="<?=base_url('admin_listmodul/update_bahan/')?>"
                                         enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Judul Bahan</label>
@@ -251,7 +264,7 @@
 
                                         <input type="hidden" value="asdsa" id="id_bahan" name="id_bahan">
                                         <input type="hidden" id="foto_old" name="foto_bahan">
-                                        <input type="hidden" name="id_praktikum" value="<?= $this->uri->segment(3) ?>">
+                                        <input type="hidden" name="id_praktikum" value="<?=$this->uri->segment(3)?>">
 
 
 

@@ -85,11 +85,14 @@ class Admin_kelolaadmin extends CI_Controller
             redirect('admin_kelolaadmin');
         } else {
 
+            $random_string = random_bytes(5);
+
             $username = $this->input->post('username');
             $email = $this->input->post('email');
             $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 
             $data = [
+                'id_petugas' => "ADM-" . bin2hex($random_string),
                 'nama_admin' => $this->input->post('nama_lengkap'),
                 'username' => $username,
                 'email' => $email,
@@ -98,7 +101,6 @@ class Admin_kelolaadmin extends CI_Controller
             ];
 
             $this->admin->insert('admin', $data);
-
 
             $this->session->set_flashdata('flash', "Data Admin Berhasil Didaftarkan!");
             redirect('admin_kelolaadmin');
@@ -156,9 +158,9 @@ class Admin_kelolaadmin extends CI_Controller
 
         $data_admin = [];
 
-        // var_dump($foto_bahan_baru);die();
+        // var_dump($foto_bahan_baru == "");die();
 
-        if ($foto_bahan_baru) {
+        if ($foto_bahan_baru != "") {
 
             $file = 'assets_praktikum/img_profile/admin/' . $foto_bahan_lama;
 
@@ -179,8 +181,6 @@ class Admin_kelolaadmin extends CI_Controller
                 'foto_profile' => $foto_bahan_lama,
             ];
         }
-
-
 
         $this->admin->update('admin', $data_admin, ['id_admin' => $id_admin]);
         // $this->admin->update('tb_user', $data_user, ['id_user' => $this->session->userdata('id_user')]);
@@ -237,7 +237,7 @@ class Admin_kelolaadmin extends CI_Controller
                 $namaFilesBaru .= '.';
                 $namaFilesBaru .= $ekstensiGambar;
 
-                move_uploaded_file($tmpName, 'assets_praktikum/img_profile/asprak/' . $namaFilesBaru);
+                move_uploaded_file($tmpName, 'assets_praktikum/img_profile/admin/' . $namaFilesBaru);
 
                 return $namaFilesBaru;
             }

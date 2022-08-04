@@ -26,12 +26,15 @@ class Admin_tambahbarang extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Tambah Modul Praktikum";
+        $data['title'] = "Tambah Data Paket Barang";
 
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required');
         $this->form_validation->set_rules('harga', 'Harga', 'required');
+        $this->form_validation->set_rules('stok', 'Stok', 'required');
         $this->form_validation->set_rules('deskripsi_lainnya', 'Deskripsi Lainnya', 'required');
         $this->form_validation->set_rules('link', 'Link', 'required');
+
+        // var_dump("PKT-" . bin2hex($bytes));die();
 
         // $data['modul_praktikum'] = $this->Asprak_model->get('tb_praktikum')->result();
 
@@ -40,15 +43,17 @@ class Admin_tambahbarang extends CI_Controller
             $this->load->view('admin/tambahBarang', $data);
             $this->load->view('template/footer');
         } else {
-            $this->tambahDataModul();
+            $this->tambahDataPaket();
         }
     }
 
-    public function tambahDataModul()
+    public function tambahDataPaket()
     {
+        $random_string = random_bytes(5);
 
         $nama_barang = $this->input->post('nama_barang');
         $harga = $this->input->post('harga');
+        $stok = $this->input->post('stok');
         $deskripsi_lainnya = $this->input->post('deskripsi_lainnya');
         $link = $this->input->post('link');
         $foto_barang = $this->_uploadFile();
@@ -60,8 +65,10 @@ class Admin_tambahbarang extends CI_Controller
         // var_dump($jam_deadline);die();
 
         $data = [
+            'kode_barang' => "PKT-" . bin2hex($random_string),
             'nama_barang' => $nama_barang,
             'harga' => $harga,
+            'stok' => $stok,
             'deskripsi_lainnya' => $deskripsi_lainnya,
             'foto_barang' => $foto_barang,
             'link' => $link,
@@ -84,7 +91,6 @@ class Admin_tambahbarang extends CI_Controller
         // $nama_file = str_replace(" ", "_", $namaFiles);
         $tmpName = $_FILES['file']['tmp_name'];
 
-
         if ($eror === 4) {
             $flahdata = $this->alert('Maaf', 'danger', 'Gagal Mengunggah Gambar!');
 
@@ -97,7 +103,6 @@ class Admin_tambahbarang extends CI_Controller
         $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
 
         $ekstensiGambar = explode('.', $namaFiles);
-
 
         $ekstensiGambar = strtolower(end($ekstensiGambar));
         if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {

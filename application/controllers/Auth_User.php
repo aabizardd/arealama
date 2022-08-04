@@ -115,10 +115,9 @@ class Auth_User extends CI_Controller
 
             $this->db->insert('konsumen', $data);
             $this->db->insert('user_token', $user_token);
-
             $this->_sendEmail($token, 'verify');
 
-            $pesan = $this->alert('Selamat!', 'success', "Akun anda sudah dibuat. Tolong aktivasi akun anda melalui email!");
+            $pesan = $this->alert('Selamat!', 'success', "Link aktivasi sudah dikirim ke $email!");
             $this->session->set_flashdata('alert_auth', $pesan);
 
             redirect('');
@@ -131,9 +130,9 @@ class Auth_User extends CI_Controller
         $this->load->library('email');
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_user' => 'badrisale.afa@gmail.com',
-            'smtp_pass' => 'daftar123',
+            'smtp_host' => 'ssl://mail.biotechducation.com',
+            'smtp_user' => 'admin@biotechducation.com',
+            'smtp_pass' => 'Jakarta21;',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',

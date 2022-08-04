@@ -1,6 +1,6 @@
 <section class="hero">
     <div class="hero__slider owl-carousel">
-        <div class="hero__items set-bg" data-setbg="<?= base_url('assets_arealama/') ?>img/hero/hero-1.png">
+        <div class="hero__items set-bg" data-setbg="<?=base_url('assets_arealama/')?>img/hero/hero-1.png">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-7 col-md-8">
@@ -9,7 +9,7 @@
                             <h2>Dengan Rp. 50.000 Udah Bisa Keren?!</h2>
                             <p>Hanya ada di <b style="color: #893D39;">AREALAMA</b> dengan budget tipis kamu udah bisa
                                 dapet baju artis! </p>
-                            <a href="<?= base_url('shop') ?>" class="primary-btn">Shop now <span
+                            <a href="<?=base_url('shop')?>" class="primary-btn">Shop now <span
                                     class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="hero__items set-bg" data-setbg="<?= base_url('assets_arealama/') ?>img/hero/hero-2.png">
+        <div class="hero__items set-bg" data-setbg="<?=base_url('assets_arealama/')?>img/hero/hero-2.png">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-7 col-md-8">
@@ -31,7 +31,7 @@
                             <h2>Dengan 1 Juta Dapat Sekarung, Kamu Bisa Dapet Baju Kekinian!</h2>
                             <!-- <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                 commitment to exceptional quality.</p> -->
-                            <a href="<?= base_url('shop') ?>" class="primary-btn">Shop now <span
+                            <a href="<?=base_url('shop')?>" class="primary-btn">Shop now <span
                                     class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -54,7 +54,7 @@
             <div class="col-lg-7 offset-lg-4">
                 <div class="banner__item">
                     <div class="banner__item__pic">
-                        <img src="<?= base_url('assets_arealama/') ?>img/banner/contoh-baju.png" alt="" width="440"
+                        <img src="<?=base_url('assets_arealama/')?>img/banner/contoh-baju.png" alt="" width="440"
                             style="border-radius: 20px;">
                     </div>
                     <div class="banner__item__text">
@@ -67,13 +67,13 @@
                 <div class="banner__item banner__item--middle">
                     <div class="banner__item__pic">
                         <video width="440" height="440" style="object-fit: cover;border-radius: 20px;" controls>
-                            <source src="<?= base_url('assets_arealama/') ?>img/banner/vid-tiktok.mp4" type="video/mp4">
+                            <source src="<?=base_url('assets_arealama/')?>img/banner/vid-tiktok.mp4" type="video/mp4">
 
                         </video>
 
                     </div>
                     <div class="banner__item__text">
-                        <h2>Follow Us On <img src="<?= base_url('assets_arealama/') ?>tiktok.png" alt="" width="40">
+                        <h2>Follow Us On <img src="<?=base_url('assets_arealama/')?>tiktok.png" alt="" width="40">
                         </h2>
                         <a href="https://www.tiktok.com/@azhyraarn?lang=en" target="_blank">area.lama</a>
                     </div>
@@ -82,7 +82,7 @@
             <div class="col-lg-7">
                 <div class="banner__item banner__item--last">
                     <div class="banner__item__pic">
-                        <img src="<?= base_url('assets_arealama/') ?>img/banner/contoh-banner-baju.jpeg" alt=""
+                        <img src="<?=base_url('assets_arealama/')?>img/banner/contoh-banner-baju.jpeg" alt=""
                             style="border-radius: 20px;" width="440">
                     </div>
                     <div class="banner__item__text">
@@ -108,37 +108,36 @@
             </div>
         </div>
         <div class="row product__filter">
-            <?php foreach ($barang as $item) : ?>
+            <?php foreach ($barang as $item): ?>
 
             <?php
-                $linkk = substr($item->link, 21);
+$linkk = substr($item->link, 21);
 
-                $linkk = explode(".", $linkk);
+$linkk = explode(".", $linkk);
 
-                $linkk = substr($linkk[0], 0, -2);
+$linkk = substr($linkk[0], 0, -2);
 
-                // var_dump($linkk);die();
+// var_dump($linkk);die();
 
-                ?>
+?>
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                 <div class="product__item">
                     <div class="product__item__pic set-bg list-barang"
-                        data-setbg="<?= base_url('assets_praktikum/img_bahan_modul/') . $item->foto_barang ?>"
-                        data-id="<?= $linkk ?>">
+                        data-setbg="<?=base_url('assets_praktikum/img_bahan_modul/') . $item->foto_barang?>"
+                        data-id="<?=$linkk?>">
 
 
 
                         <span class="label">New</span>
                         <ul class="product__hover">
-                            <li><a href="#"><img src="<?= base_url('assets_arealama/') ?>img/icon/xheart.png"
-                                        alt=""></a>
+                            <li><a href="#"><img src="<?=base_url('assets_arealama/')?>img/icon/xheart.png" alt=""></a>
                             </li>
-                            <li><a href="#"><img src="<?= base_url('assets_arealama/') ?>img/icon/xcompare.png" alt="">
+                            <li><a href="#"><img src="<?=base_url('assets_arealama/')?>img/icon/xcompare.png" alt="">
                                     <span>Compare</span></a></li>
                             <!-- <li>
                                 <a href="" class="detail-pict"><img
-                                        src="<?= base_url('assets_arealama/') ?>img/icon/xsearch.png.pagespeed.ic.y-8fLDHdJm.png"
+                                        src="<?=base_url('assets_arealama/')?>img/icon/xsearch.png.pagespeed.ic.y-8fLDHdJm.png"
                                         alt=""></a>
                             </li> -->
                         </ul>
@@ -147,8 +146,8 @@
                     </div>
 
                     <div class="product__item__text">
-                        <h6><?= $item->nama_barang ?></h6>
-                        <a href="<?= base_url('detail_produk/' . $item->id_barang) ?>" class="add-cart"
+                        <h6><?=$item->nama_barang?></h6>
+                        <a href="<?=base_url('detail_produk/' . $item->id_barang)?>" class="add-cart"
                             style="color: #893D39;">Detail
                             Product</a>
                         <div class="rating">
@@ -159,14 +158,14 @@
                             <i class="fa fa-star" style="color: #e8e800;"></i>
 
                         </div>
-                        <?php $harga = "Rp " . number_format($item->harga, 0, ',', '.'); ?>
-                        <h5><?= $harga ?></h5>
+                        <?php $harga = "Rp " . number_format($item->harga, 0, ',', '.');?>
+                        <h5><?=$harga?></h5>
 
                     </div>
                 </div>
             </div>
 
-            <?php endforeach; ?>
+            <?php endforeach;?>
 
         </div>
     </div>
@@ -174,7 +173,7 @@
 
 
 
-<script src="<?= base_url('assets_arealama/') ?>js/jquery-3.3.1.min.js"></script>
+<script src="<?=base_url('assets_arealama/')?>js/jquery-3.3.1.min.js"></script>
 <script>
 $(document).ready(function() {
     $('.list-barang').click(function() {
@@ -184,7 +183,7 @@ $(document).ready(function() {
         var location = "";
         if (id) {
 
-            location = "<?= base_url('kelola_link/index/') ?>" + id;
+            location = "<?=base_url('kelola_link/index/')?>" + id;
 
         } else {
             location = "www.google.com";
@@ -211,7 +210,7 @@ $(document).ready(function() {
             </div>
             <div class="col-lg-4">
                 <div class="categories__hot__deal">
-                    <img src="<?= base_url('assets_arealama/') ?>img/xproduct-sale.png" alt="">
+                    <img src="<?=base_url('assets_arealama/')?>img/xproduct-sale.png" alt="">
                     <!-- <div class="hot__deal__sticker">
                         <span>Sale Of</span>
                         <h5>$29.99</h5>
@@ -240,7 +239,7 @@ $(document).ready(function() {
                             <p>Seconds</p>
                         </div>
                     </div> -->
-                    <a href="<?= base_url('order') ?>" class="primary-btn">Order sekarang</a>
+                    <a href="<?=base_url('order')?>" class="primary-btn">Order sekarang</a>
                 </div>
             </div>
         </div>
@@ -255,17 +254,17 @@ $(document).ready(function() {
                 <div class="instagram__pic">
                     <a href="https://www.instagram.com/area.lama/" target="_blank">
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-1.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-1.jpg"></div>
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-2.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-2.jpg"></div>
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-3.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-3.jpg"></div>
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-4.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-4.jpg"></div>
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-5.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-5.jpg"></div>
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-6.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-6.jpg"></div>
                     </a>
                 </div>
             </div>
@@ -283,8 +282,8 @@ $(document).ready(function() {
 
                     </p>
                     <a href="https://www.instagram.com/area.lama/" target="_blank">
-                        <h3 style="color: #FFE5DE;">@area.lama <img
-                                src="<?= base_url('assets_arealama/') ?>instagram.png" alt="" width="30"></h3>
+                        <h3 style="color: #FFE5DE;">@area.lama <img src="<?=base_url('assets_arealama/')?>instagram.png"
+                                alt="" width="30"></h3>
                     </a>
                 </div>
             </div>
@@ -307,7 +306,7 @@ $(document).ready(function() {
                     </p>
 
                     <a href="https://shopee.co.id/ramdan020999?categoryId=33&itemId=11507497034" target="_blank">
-                        <h3 style="color: #FFE5DE;">@area.lama <img src="<?= base_url('assets_arealama/') ?>shopee.png"
+                        <h3 style="color: #FFE5DE;">@area.lama <img src="<?=base_url('assets_arealama/')?>shopee.png"
                                 alt="" width="30"></h3>
                     </a>
 
@@ -323,17 +322,17 @@ $(document).ready(function() {
                 <div class="instagram__pic">
                     <a href="https://shopee.co.id/ramdan020999?categoryId=33&itemId=11507497034" target="_blank">
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-1.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-1.jpg"></div>
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-2.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-2.jpg"></div>
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-3.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-3.jpg"></div>
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-4.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-4.jpg"></div>
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-5.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-5.jpg"></div>
                         <div class="instagram__pic__item set-bg"
-                            data-setbg="<?= base_url('assets_arealama/') ?>img/instagram/instagram-6.jpg"></div>
+                            data-setbg="<?=base_url('assets_arealama/')?>img/instagram/instagram-6.jpg"></div>
                     </a>
                 </div>
             </div>
@@ -356,10 +355,10 @@ $(document).ready(function() {
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
                     <div class="blog__item__pic set-bg"
-                        data-setbg="<?= base_url('assets_arealama/') ?>img/blog/blog-1.jpg"></div>
+                        data-setbg="<?=base_url('assets_arealama/')?>img/blog/blog-1.jpg"></div>
                     <div class="blog__item__text">
                         <span><img
-                                src="<?= base_url('assets_arealama/') ?>img/icon/xcalendar.png.pagespeed.ic.GXy2gYWDh7.png"
+                                src="<?=base_url('assets_arealama/')?>img/icon/xcalendar.png.pagespeed.ic.GXy2gYWDh7.png"
                                 alt=""> 16 February
                             2020</span>
                         <h5>What Curling Irons Are The Best Ones</h5>
@@ -370,10 +369,10 @@ $(document).ready(function() {
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
                     <div class="blog__item__pic set-bg"
-                        data-setbg="<?= base_url('assets_arealama/') ?>img/blog/blog-2.jpg"></div>
+                        data-setbg="<?=base_url('assets_arealama/')?>img/blog/blog-2.jpg"></div>
                     <div class="blog__item__text">
                         <span><img
-                                src="<?= base_url('assets_arealama/') ?>img/icon/xcalendar.png.pagespeed.ic.GXy2gYWDh7.png"
+                                src="<?=base_url('assets_arealama/')?>img/icon/xcalendar.png.pagespeed.ic.GXy2gYWDh7.png"
                                 alt=""> 21 February
                             2020</span>
                         <h5>Eternity Bands Do Last Forever</h5>
@@ -384,10 +383,10 @@ $(document).ready(function() {
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
                     <div class="blog__item__pic set-bg"
-                        data-setbg="<?= base_url('assets_arealama/') ?>img/blog/blog-3.jpg"></div>
+                        data-setbg="<?=base_url('assets_arealama/')?>img/blog/blog-3.jpg"></div>
                     <div class="blog__item__text">
                         <span><img
-                                src="<?= base_url('assets_arealama/') ?>img/icon/xcalendar.png.pagespeed.ic.GXy2gYWDh7.png"
+                                src="<?=base_url('assets_arealama/')?>img/icon/xcalendar.png.pagespeed.ic.GXy2gYWDh7.png"
                                 alt=""> 28 February
                             2020</span>
                         <h5>The Health Benefits Of Sunglasses</h5>

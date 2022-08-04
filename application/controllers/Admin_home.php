@@ -32,6 +32,11 @@ class Admin_home extends CI_Controller
         $data['test'] = "hello";
         $data['jml_barang'] = $this->db->get('barang')->num_rows();
 
+        $data['jml_user'] = $this->db->get('konsumen')->num_rows();
+        $data['jml_admin'] = $this->db->get('admin')->num_rows();
+
+        // var_dump($data['jml_user']);die();
+
         $year = date("Y");
         $data['tahun'] = $year;
 
@@ -49,7 +54,6 @@ class Admin_home extends CI_Controller
             'nov' => $this->Admin_model->get_jml_pesanan(11, $year),
             'des' => $this->Admin_model->get_jml_pesanan(12, $year),
         ];
-
 
         // $data['jumlah_praktikan'] = $this->Asprak_model->count_all_results('tb_praktikan');
         // $data['jumlah_modul'] = $this->Asprak_model->count_all_results('tb_praktikum');
@@ -72,6 +76,6 @@ class Admin_home extends CI_Controller
         // $this->session->unset_userdata('id_user');
         // $this->session->unset_userdata('foto_profile');
 
-        redirect('auth');
+        redirect('auth_admin');
     }
 }
