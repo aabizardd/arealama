@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2022 at 03:28 PM
+-- Generation Time: Aug 04, 2022 at 03:22 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL,
+  `id_petugas` varchar(250) DEFAULT NULL,
   `nama_admin` varchar(250) NOT NULL,
   `username` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
@@ -41,9 +42,9 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `email`, `password`, `foto_profile`, `status_active`) VALUES
-(1, 'Admin', 'admin', 'azhyra2@gmail.com', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', 'default.jpg', 1),
-(2, 'Admin 1', 'admin1', 'azhyra2@gmail.com', '$2y$10$vX.ls95e59u559eOQOJyn.TLaMbjKs4idvn3RanxG5IEEqSUn4lQC', '62070a10181c8.jpg', 1);
+INSERT INTO `admin` (`id_admin`, `id_petugas`, `nama_admin`, `username`, `email`, `password`, `foto_profile`, `status_active`) VALUES
+(1, 'ADM-asdas12312', 'Admin', 'admin', 'azhyra2@gmail.com', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', '62d698a30a149.jpg', 1),
+(2, 'ADM-asdasd11111', 'Admin 1', 'admin1', 'azhyra2@gmail.com', '$2y$10$vX.ls95e59u559eOQOJyn.TLaMbjKs4idvn3RanxG5IEEqSUn4lQC', '62d6999d63eac.png', 1);
 
 -- --------------------------------------------------------
 
@@ -53,9 +54,11 @@ INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `email`, `password`, 
 
 CREATE TABLE `barang` (
   `id_barang` int(11) NOT NULL,
+  `kode_barang` varchar(250) NOT NULL,
   `foto_barang` varchar(250) NOT NULL,
   `nama_barang` varchar(250) NOT NULL,
   `harga` varchar(250) NOT NULL,
+  `stok` int(11) NOT NULL,
   `deskripsi_lainnya` text NOT NULL,
   `link` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -64,10 +67,10 @@ CREATE TABLE `barang` (
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `foto_barang`, `nama_barang`, `harga`, `deskripsi_lainnya`, `link`) VALUES
-(10, 'barang60c864c6d5459.jpeg', 'PAKET KEMEJA DAN BLOUSE PREMIUM', '508000', 'PAKET KEMEJA DAN BLOUSE PREMIUM\r\nBerisikan atasan wanita seperti kemeja dan blouse, bahan mix premium dan impor, campur lengan panjang dan pendek.\r\n-	Paket 1.000k berisikan 22pcs [BEST SELLER]\r\n-	Paket 508k berisikan 10pcs\r\nPaket berisikan kemeja dan blouse berlengan panjang dan pendek dengan berbagai warna model dan motif berbeda.', 'https://shopee.co.id/PAKET-KEMEJA-DAN-BLOUSE-PREMIUM-i.224838955.10811514984'),
-(11, 'barang60c87bf83bafc.jpeg', 'PAKET MURAH BERKELAS [DAPAT 20pcs MIX]', '350000', 'PAKET MURAH BERKELAS\r\nBerisikan atasan wanita mix seperti kemeja dan blouse, turtlenec, sweater, cardigan, knitwear campur lengan panjang dan pendek dengan berbagai warna model dan motif berbeda.\r\nHARGA SESUAI KUALITAS', 'https://shopee.co.id/PAKET-MURAH-BERKELAS-DAPAT-20pcs-MIX--i.224838955.10011547398'),
-(12, 'barang60c880db8cf12.jpeg', 'PAKET CARDIGAN', '1060000', 'Berisikan atasan wanita cardigan, bahan mix, campur lengan panjang dan pendek dengan berbagai warna model dan motif yang berbeda\r\n\r\n-	Paket 1.550k berisikan 50pcs [BEST SELLER]\r\n-	Paket 1.060k berisikan 30pcs', 'https://shopee.co.id/-50-Pcs-PAKET-CARDIGAN-i.224838955.9067160349');
+INSERT INTO `barang` (`id_barang`, `kode_barang`, `foto_barang`, `nama_barang`, `harga`, `stok`, `deskripsi_lainnya`, `link`) VALUES
+(10, '', 'barang60c864c6d5459.jpeg', 'PAKET KEMEJA DAN BLOUSE PREMIUM', '508000', 2, 'PAKET KEMEJA DAN BLOUSE PREMIUM\r\nBerisikan atasan wanita seperti kemeja dan blouse, bahan mix premium dan impor, campur lengan panjang dan pendek.\r\n-	Paket 1.000k berisikan 22pcs [BEST SELLER]\r\n-	Paket 508k berisikan 10pcs\r\nPaket berisikan kemeja dan blouse berlengan panjang dan pendek dengan berbagai warna model dan motif berbeda.', 'https://shopee.co.id/PAKET-KEMEJA-DAN-BLOUSE-PREMIUM-i.224838955.10811514984'),
+(11, '', 'barang60c87bf83bafc.jpeg', 'PAKET MURAH BERKELAS [DAPAT 20pcs MIX]', '350000', 2, 'PAKET MURAH BERKELAS\r\nBerisikan atasan wanita mix seperti kemeja dan blouse, turtlenec, sweater, cardigan, knitwear campur lengan panjang dan pendek dengan berbagai warna model dan motif berbeda.\r\nHARGA SESUAI KUALITAS', 'https://shopee.co.id/PAKET-MURAH-BERKELAS-DAPAT-20pcs-MIX--i.224838955.10011547398'),
+(12, '', 'barang60c880db8cf12.jpeg', 'PAKET CARDIGAN', '1060000', 1, 'Berisikan atasan wanita cardigan, bahan mix, campur lengan panjang dan pendek dengan berbagai warna model dan motif yang berbeda\r\n\r\n-	Paket 1.550k berisikan 50pcs [BEST SELLER]\r\n-	Paket 1.060k berisikan 30pcs', 'https://shopee.co.id/-50-Pcs-PAKET-CARDIGAN-i.224838955.9067160349');
 
 -- --------------------------------------------------------
 
@@ -88,7 +91,10 @@ CREATE TABLE `barang_checkout` (
 
 INSERT INTO `barang_checkout` (`id_barang_checkout`, `id_barang`, `qty`, `id_transaksi`) VALUES
 (3, 10, 1, 4),
-(4, 11, 1, 4);
+(4, 11, 1, 4),
+(5, 10, 1, 5),
+(6, 10, 1, 6),
+(7, 10, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -126,7 +132,30 @@ CREATE TABLE `konsumen` (
 
 INSERT INTO `konsumen` (`id`, `username`, `nama`, `email`, `no_telp`, `foto`, `password`, `status_aktif`) VALUES
 (9, 'test', 'Muhammad Abizard', 'abizard@student.telkomuniversity.ac.id', '081386397855', '62070b374d0b5.jpg', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', 1),
-(12, 'test2', NULL, 'm.abizard1123@gmail.com', NULL, 'user_default.png', '$2y$10$gjYsKNL5SdmMplLhYbttRObmXmj1VQ3SdwDHempxU7KGADCxwqqtm', 0);
+(12, 'test2', NULL, 'm.test@gmail.com', NULL, 'user_default.png', '$2y$10$0R0r5Ux/4RAqRwqoUl1ozON/0ukWpjuVReyVnDpfhePMkLbLLSOVC', 1),
+(15, 'test123', NULL, 'haitsam03@gmail.com', NULL, 'user_default.png', '$2y$10$i08xYZpP77IbtXQpOmFw6.vaDGgrw9PrE32zO194yTxz40pDUNrKO', 1),
+(17, 'test11', NULL, 'test11@gmail.com', NULL, 'user_default.png', '$2y$10$Oc54AxkRXa2EYCvPWJujHujQzxL23g3/LlYkc9sIq.CS3R9AsbjvC', 1),
+(18, 'konsumen', NULL, 'm.abizard1123@gmail.com', NULL, 'user_default.png', '$2y$10$TN48ja2r9DFEXVdC1QMBgOBPy2QtXFPRsW2JtHOiPy7pgi4KKiK8K', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ongkir`
+--
+
+CREATE TABLE `ongkir` (
+  `id` int(11) NOT NULL,
+  `provinsi` varchar(250) NOT NULL,
+  `ongkir` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ongkir`
+--
+
+INSERT INTO `ongkir` (`id`, `provinsi`, `ongkir`) VALUES
+(2, 'Jawa Barat', 12000),
+(3, 'Jawa Timur', 15000);
 
 -- --------------------------------------------------------
 
@@ -176,7 +205,9 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_konsumen`, `nama_depan`, `nama_belakang`, `alamat`, `no_hp`, `tgl_transaksi`, `jasa_pengiriman`, `nomor_resi`, `total`, `bukti_bayar`, `status`) VALUES
-(4, 9, 'Azhyra', 'Rana', 'asdfasd', '1312312', '2022-02-27 03:34:32', NULL, NULL, 1312312, 'materi62011a9b7784b.jpg', 0);
+(4, 9, 'Azhyra', 'Rana', 'asdfasd', '1312312', '2022-02-27 03:34:32', NULL, NULL, 1312312, 'materi62011a9b7784b.jpg', 0),
+(5, 9, 'Muhammad', 'Abizard', 'Taman Sari Persada, Cluster Lotus B4/12A', '081386397855', '2022-04-13 14:10:48', NULL, NULL, 2147483647, 'materi6256d9e80a328.png', 3),
+(7, 9, 'Azhyra Rana', 'asdas', 'Bogor', '081386397855', '2022-08-04 13:21:22', NULL, NULL, 508000, 'materi62ebc7d295b1b.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -196,10 +227,11 @@ CREATE TABLE `user_token` (
 --
 
 INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
-(1, 'm.abizard1123@gmail.com', 'qZjbA1UVCEPGtOchzllszr0Yqf7mOGOMrWzYlyS/oLc=', '1642905501'),
 (6, 'abizard@student.telkomuniversity.ac.id', '859gfw6n/I2ckojtM2u3hijiVpF/PuKOE50czhEFDdk=', '1642910724'),
-(7, 'm.abizard1123@gmail.com', 't4oKV8aQsOZHp3z5QgCVNIQS5rLnIkKdL+IxbeqUxuU=', '1645844326'),
-(8, 'm.abizard1123@gmail.com', 'skEywWhHADafpsB7v3QYScWQSDSrmn4nGvXQYoP/xyg=', '1645845174');
+(11, 'haitsam03@gmail.com', '2irNjJMjQDfiFbEnfd705+z644XDNKuC+upKF4mJbSs=', '1649945849'),
+(12, 'test11@gmail.com', 'stmVL4PqeNqXwxeogYNy4ZL4VbbIguuaLvJXCx7n8F4=', '1657420031'),
+(14, 'm.abizard1123@gmail.com', 'NE2oczNCLNiV8vD2BWibDShs74RXnPvva+EpEg47WzU=', '1659617974'),
+(15, 'm.abizard1123@gmail.com', 'h2P6l1PrFSpg4vabHI5LuIvuLJtfPHArweGWaZwRFug=', '1659618034');
 
 --
 -- Indexes for dumped tables
@@ -236,6 +268,12 @@ ALTER TABLE `konsumen`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ongkir`
+--
+ALTER TABLE `ongkir`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `status_transaksi`
 --
 ALTER TABLE `status_transaksi`
@@ -261,43 +299,49 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `barang_checkout`
 --
 ALTER TABLE `barang_checkout`
-  MODIFY `id_barang_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_barang_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `konsumen`
 --
 ALTER TABLE `konsumen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `ongkir`
+--
+ALTER TABLE `ongkir`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
