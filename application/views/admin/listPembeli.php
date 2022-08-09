@@ -3,7 +3,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "sidebar.php"; ?>
+        <?php include "sidebar.php";?>
 
 
         <!-- Content Wrapper -->
@@ -12,7 +12,7 @@
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "topbar.php"; ?>
+                <?php include "topbar.php";?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid mb-5">
@@ -22,7 +22,7 @@
                         <h1 class="h3 mb-0 text-gray-800">List Data Pembeli</h1>
 
 
-                        <form action="<?= base_url('Admin_kelolapembeli'); ?>" method="post">
+                        <form action="<?=base_url('Admin_kelolapembeli');?>" method="post">
                             <div class="row mt-2">
                                 <div class="col-9">
                                     <input type="text" class="form-control" placeholder="Keyword..." autocomplete="off"
@@ -40,8 +40,8 @@
 
                     </div>
 
-                    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
-                    <div class="flash-data-error" data-flashdata="<?= $this->session->flashdata('flash-error'); ?>">
+                    <div class="flash-data" data-flashdata="<?=$this->session->flashdata('flash');?>"></div>
+                    <div class="flash-data-error" data-flashdata="<?=$this->session->flashdata('flash-error');?>">
                     </div>
 
                     <div class="card">
@@ -56,12 +56,12 @@
 
                             <div class="row">
 
-                                <?php if (empty($classes)) : ?>
-                                <img src="<?= base_url('assets_praktikum/img_lain/no_file.png') ?>" alt="" width="500"
+                                <?php if (empty($classes)): ?>
+                                <img src="<?=base_url('assets_praktikum/img_lain/no_file.png')?>" alt="" width="500"
                                     class="rounded mx-auto d-block">
-                                <?php endif; ?>
+                                <?php endif;?>
 
-                                <?php foreach ($classes as $class) : ?>
+                                <?php foreach ($classes as $class): ?>
 
 
 
@@ -70,7 +70,7 @@
                                     <div class="card">
                                         <span class="ml-3 mt-3 text-white"
                                             style="position: absolute;background-color: #004080;border-radius: 50%;width: 35px;height: 35px;text-align: center;font-size: 15px;padding-top: 7px;">
-                                            <?= ++$start; ?></span>
+                                            <?=++$start;?></span>
 
                                         <div class="dropdown no-arrow position-absolute mt-3 mr-3"
                                             style="background-color:#eaeaea;border-radius:50%;width: 35px;height: 35px;text-align: center;font-size: 15px;padding-top: 7px; margin-right: 0;right: 0;">
@@ -86,13 +86,13 @@
 
                                                 <a class="btn btn-danger dropdown-item tombol-hapus mt-2"
                                                     id="tombol-hapus" type="button"
-                                                    href="<?= base_url('admin_kelolapembeli/hapus_pembeli/') . $class['id'] ?>"><span
+                                                    href="<?=base_url('admin_kelolapembeli/hapus_pembeli/') . $class['id']?>"><span
                                                         style="color: red;"><i class="fas fa-trash"></i></span>
                                                     Hapus
                                                 </a>
 
                                                 <a class="btn btn-success dropdown-item mt-2" type="button"
-                                                    href="<?= base_url('admin_kelolapembeli/edit/') . $class['id'] ?>"><span
+                                                    href="<?=base_url('admin_kelolapembeli/edit/') . $class['id']?>"><span
                                                         style="color: green;"><i class="fas fa-edit"></i></span>
                                                     Edit
                                                 </a>
@@ -106,13 +106,13 @@
                                         </div>
 
                                         <img class=" card-img-top"
-                                            src="<?= base_url('assets_arealama/img_profile/') . $class['foto'] ?>"
+                                            src="<?=base_url('assets_arealama/img_profile/') . $class['foto']?>"
                                             alt="Card image cap" style="height: 250px;">
                                         <div class="card-body">
                                             <p class="card-title">
                                                 <strong class="text-justify">
 
-                                                    <?= $class['nama'] ?>
+                                                    <?=$class['nama']?>
 
 
                                                 </strong>
@@ -127,13 +127,13 @@
                                 </div>
 
 
-                                <?php endforeach; ?>
+                                <?php endforeach;?>
 
 
 
                             </div>
 
-                            <?= $this->pagination->create_links() ?>
+                            <?=$this->pagination->create_links()?>
 
 
 
@@ -194,7 +194,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('admin_home/logout') ?>">Logout</a>
+                    <a class="btn btn-primary" href="<?=base_url('admin_home/logout')?>">Logout</a>
                 </div>
             </div>
         </div>
@@ -211,7 +211,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="<?= base_url('admin_kelolapembeli/tambah_pembeli') ?>" method="POST">
+                <form action="<?=base_url('admin_kelolapembeli/tambah_pembeli')?>" method="POST">
                     <div class="modal-body">
 
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">

@@ -92,8 +92,8 @@
                             <ul class="checkout__total__products">
                                 <?php $no = 1?>
                                 <?php foreach ($carts as $c): ?>
-                                <li>0<?=$no++?>. <?=$c['nama_barang']?>
-                                    <span><?='Rp ' . number_format($c['harga'], 2, ",", ".")?>
+                                <li>0<?=$no++?>. <?=$c['nama_barang']?> <strong>(<?=$c['qty']?>)</strong>
+                                    <span><?='Rp ' . number_format($c['harga'] * $c['qty'], 2, ",", ".")?>
 
                                     </span>
                                 </li>

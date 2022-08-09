@@ -147,10 +147,8 @@ class Admin_model extends CI_model
         $this->db->where('MONTH(tgl_transaksi)', $bulan);
         $this->db->where('YEAR(tgl_transaksi)', $tahun);
 
-
         return $this->db->get()->row_array();
     }
-
 
     // public function get_limit_praktikan($table, $limit, $start, $keyword = null, $id_kelas)
     // {

@@ -70,7 +70,9 @@ class Shop extends CI_Controller
     {
 
         $id_konsumen = $this->session->userdata('id_konsumen');
+
         $cart = $this->konsumen->get_cart_detail($id_konsumen);
+
         $total = $this->konsumen->total_cart($id_konsumen);
 
         // $data_cart =

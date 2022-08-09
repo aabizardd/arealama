@@ -41,13 +41,14 @@ class Admin_kelolapembeli extends CI_Controller
         $this->session->unset_userdata('keyword');
 
         //config
-        $this->db->like('nama_admin', $data['keyword']);
-        $this->db->from('admin');
+        $this->db->like('nama', $data['keyword']);
+        $this->db->from('konsumen');
+
         $config['total_rows'] = $this->db->count_all_results();
 
         $config['base_url'] = base_url('Admin_kelolapembeli/index');
         $data['total_rows'] = $config['total_rows'];
-        $config['per_page'] = 4;
+        $config['per_page'] = 8;
         // $config['url_segment'] = 3;
 
         //initialize
@@ -101,7 +102,6 @@ class Admin_kelolapembeli extends CI_Controller
             ];
 
             $this->admin->insert('konsumen', $data);
-
 
             $this->session->set_flashdata('flash', "Data Konsumen Berhasil Didaftarkan!");
             redirect('admin_kelolapembeli');
@@ -185,8 +185,6 @@ class Admin_kelolapembeli extends CI_Controller
                 'foto' => $foto_bahan_lama,
             ];
         }
-
-
 
         $this->admin->update('konsumen', $data_konsumen, ['id' => $id_konsumen]);
         // $this->admin->update('tb_user', $data_user, ['id_user' => $this->session->userdata('id_user')]);
