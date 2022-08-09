@@ -19,7 +19,7 @@ class Admin_kelolapembeli extends CI_Controller
 
     public function index()
     {
-// test
+
         $data['title'] = "Kelola Data Pembeli";
         //load libraray
         $this->load->library('pagination');

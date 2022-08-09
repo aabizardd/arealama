@@ -130,9 +130,9 @@ class Auth_User extends CI_Controller
         $this->load->library('email');
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'ssl://mail.biotechducation.com',
-            'smtp_user' => 'admin@biotechducation.com',
-            'smtp_pass' => 'Jakarta21;',
+            'smtp_host' => 'ssl://talisa.id.rapidplex.com',
+            'smtp_user' => 'admin@arealamaapp.com',
+            'smtp_pass' => 'J2qpdSjtf(ad',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
@@ -140,7 +140,7 @@ class Auth_User extends CI_Controller
         ];
 
         $this->email->initialize($config);
-        $this->email->from('admin_arealama@gmail.com', 'Admin Arealama');
+        $this->email->from('admin@arealamaapp.com', 'Admin Arealama');
         $this->email->to($this->input->post('email'));
 
         if ($type == 'verify') {
