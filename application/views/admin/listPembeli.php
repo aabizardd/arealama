@@ -22,7 +22,7 @@
                         <h1 class="h3 mb-0 text-gray-800">List Data Pembeli</h1>
 
 
-                        <form action="<?=base_url('Admin_kelolapembeli');?>" method="post">
+                        <form action="<?=base_url('Admin_kelolapembeli');?>" method="POST">
                             <div class="row mt-2">
                                 <div class="col-9">
                                     <input type="text" class="form-control" placeholder="Keyword..." autocomplete="off"

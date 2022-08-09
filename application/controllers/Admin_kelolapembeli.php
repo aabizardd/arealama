@@ -14,11 +14,6 @@ class Admin_kelolapembeli extends CI_Controller
 
         if (!$this->session->userdata('id_admin')) {
             redirect('auth');
-        } else {
-
-            if ($this->session->userdata('id_role') == 1) {
-                redirect('praktikan_home');
-            }
         }
     }
 
@@ -41,15 +36,18 @@ class Admin_kelolapembeli extends CI_Controller
         $this->session->unset_userdata('keyword');
 
         //config
-        $this->db->like('nama', $data['keyword']);
+        $this->db->like('username', $data['keyword']);
         $this->db->from('konsumen');
-
         $config['total_rows'] = $this->db->count_all_results();
 
-        $config['base_url'] = base_url('Admin_kelolapembeli/index');
+        $config['base_url'] = base_url('admin_kelolapembeli/index');
         $data['total_rows'] = $config['total_rows'];
-        $config['per_page'] = 8;
+        $config['per_page'] = 4;
         // $config['url_segment'] = 3;
+
+        // var_dump($this->session->all_userdata());die();
+
+        // var_dump($config['total_rows']);die();
 
         //initialize
         $this->pagination->initialize($config);

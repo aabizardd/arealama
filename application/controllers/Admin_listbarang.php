@@ -22,7 +22,7 @@ class Admin_listbarang extends CI_Controller
     public function index()
     {
 
-        $data['title'] = "List Modul Praktikum";
+        $data['title'] = "List Modul Barang";
         //load libraray
         $this->load->library('pagination');
 
@@ -45,6 +45,8 @@ class Admin_listbarang extends CI_Controller
         $config['base_url'] = base_url('admin_listbarang/index');
         $data['total_rows'] = $config['total_rows'];
         $config['per_page'] = 4;
+
+        // var_dump($config['total_rows']);die();
 
         //initialize
         $this->pagination->initialize($config);
