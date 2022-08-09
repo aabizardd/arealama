@@ -30,9 +30,8 @@ class Admin_kelolapesanan extends CI_Controller
 
         $data = [
             'title' => "Kelola Data Pesanan",
-            'transaksi' => $this->admin->get_pesanan_konsumen()->result()
+            'transaksi' => $this->admin->get_pesanan_konsumen()->result(),
         ];
-
 
         // $data['praktikans'] = $this->admin->getPraktikansAll()->result();
 
@@ -45,7 +44,7 @@ class Admin_kelolapesanan extends CI_Controller
     {
 
         $data = [
-            'status' => $status
+            'status' => $status,
         ];
 
         $this->db->update('transaksi', $data, array('id_transaksi' => $id_transaksi));
@@ -59,9 +58,8 @@ class Admin_kelolapesanan extends CI_Controller
         $data = [
             'title' => "Detail Data Pesanan",
             'transaksi' => $this->admin->get_pesanan_konsumen()->result(),
-            'barangs' => $this->admin->get_pesanan_barang($id_transaksi)->result_array()
+            'barangs' => $this->admin->get_pesanan_barang($id_transaksi)->result_array(),
         ];
-
 
         // $data['praktikans'] = $this->admin->getPraktikansAll()->result();
 

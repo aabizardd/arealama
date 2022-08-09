@@ -4,11 +4,11 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer__about">
                     <div class="footer__logo">
-                        <a href="#"><img src="<?= base_url('assets_arealama/') ?>logo.png" alt=""></a>
+                        <a href="#"><img src="<?=base_url('assets_arealama/')?>logo.png" alt=""></a>
                     </div>
                     <p style="color: #893D39;">The customer is at the heart of our unique business model, which includes
                         design.</p>
-                    <a href="#"><img src="<?= base_url('assets_arealama/') ?>img/xpayment.png" alt=""></a>
+                    <a href="#"><img src="<?=base_url('assets_arealama/')?>img/xpayment.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
@@ -55,8 +55,7 @@
                         <script>
                         document.write(new Date().getFullYear());
                         </script>2020
-                        Developer andalan kita <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                            href="https://instagram.com/abizardd_" target="_blank">Abizard</a>
+                        Developer andalan kita <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Ibnu</a>
                     </p>
 
                 </div>
@@ -77,7 +76,7 @@
 
 <!--<audio id="audio1" onloadeddata="setHalfVolume()" autoplay="true" loop>-->
 <!-- <source src="horse.ogg" type="audio/ogg"> -->
-<!--    <source src="<?= base_url('assets_arealama/') ?>music/music.mp3" type="audio/mp3">-->
+<!--    <source src="<?=base_url('assets_arealama/')?>music/music.mp3" type="audio/mp3">-->
 
 <!--</audio>-->
 
@@ -89,8 +88,8 @@ function setHalfVolume() {
 </script>
 
 
-<script src="<?= base_url('assets_arealama/') ?>js/jquery-3.3.1.min.js"></script>
-<script src="<?= base_url('assets_arealama/') ?>js/bootstrap.min.js">
+<script src="<?=base_url('assets_arealama/')?>js/jquery-3.3.1.min.js"></script>
+<script src="<?=base_url('assets_arealama/')?>js/bootstrap.min.js">
 </script>
 <script>
 eval(mod_pagespeed_JZzsHwPKPa);
@@ -98,7 +97,7 @@ eval(mod_pagespeed_JZzsHwPKPa);
 <script>
 eval(mod_pagespeed_yAX9X7dlYR);
 </script>
-<script src="<?= base_url('assets_arealama/') ?>js/jquery.nicescroll.min.js">
+<script src="<?=base_url('assets_arealama/')?>js/jquery.nicescroll.min.js">
 </script>
 <script>
 eval(mod_pagespeed_ICtRagVbiv);
@@ -109,10 +108,10 @@ eval(mod_pagespeed_0Tm96Yey2q);
 <script>
 eval(mod_pagespeed__0kegk3Rgl);
 </script>
-<script src="<?= base_url('assets_arealama/') ?>js/jquery.slicknav.js"></script>
-<script src="<?= base_url('assets_arealama/') ?>js/mixitup.min.js"></script>
-<script src="<?= base_url('assets_arealama/') ?>js/owl.carousel.min.js"></script>
-<script src="<?= base_url('assets_arealama/') ?>js/main.js"></script>
+<script src="<?=base_url('assets_arealama/')?>js/jquery.slicknav.js"></script>
+<script src="<?=base_url('assets_arealama/')?>js/mixitup.min.js"></script>
+<script src="<?=base_url('assets_arealama/')?>js/owl.carousel.min.js"></script>
+<script src="<?=base_url('assets_arealama/')?>js/main.js"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 
@@ -141,7 +140,7 @@ gtag('config', 'UA-23581568-13');
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-<script src="<?= base_url('assets_arealama/') ?>js/resi.js"></script>
+<script src="<?=base_url('assets_arealama/')?>js/resi.js"></script>
 
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js">
 </script>

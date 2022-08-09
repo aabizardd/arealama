@@ -7,8 +7,6 @@ function rupiah($angka)
     return $hasil_rupiah;
 }
 
-
-
 ?>
 
 <body id="page-top">
@@ -16,7 +14,7 @@ function rupiah($angka)
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "sidebar.php"; ?>
+        <?php include "sidebar.php";?>
 
 
         <!-- Content Wrapper -->
@@ -25,7 +23,7 @@ function rupiah($angka)
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "topbar.php"; ?>
+                <?php include "topbar.php";?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid mb-5">
@@ -41,8 +39,8 @@ function rupiah($angka)
 
                     </div>
 
-                    <!-- <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
-                    <div class="flash-data-error" data-flashdata="<?= $this->session->flashdata('flash-error'); ?>">
+                    <!-- <div class="flash-data" data-flashdata="<?=$this->session->flashdata('flash');?>"></div>
+                    <div class="flash-data-error" data-flashdata="<?=$this->session->flashdata('flash-error');?>">
                     </div> -->
 
                     <div class="card">
@@ -82,19 +80,19 @@ function rupiah($angka)
                                     </tfoot>
                                     <tbody>
 
-                                        <?php $no = 1 ?>
-                                        <?php foreach ($transaksi as $tr) : ?>
+                                        <?php $no = 1?>
+                                        <?php foreach ($transaksi as $tr): ?>
 
                                         <tr>
-                                            <td><?= $no++ ?></td>
-                                            <td><?= $tr->nama ?></td>
-                                            <td><?= $tr->nama_depan . " " . $tr->nama_belakang ?></td>
-                                            <td><?= $tr->alamat ?></td>
-                                            <td><?= $tr->no_hp ?></td>
-                                            <td><?= rupiah($tr->total) ?></td>
-                                            <td><?= $tr->jasa_pengiriman . "-" . $tr->nomor_resi ?></td>
+                                            <td><?=$no++?></td>
+                                            <td><?=$tr->nama?></td>
+                                            <td><?=$tr->nama_depan . " " . $tr->nama_belakang?></td>
+                                            <td><?=$tr->alamat?></td>
+                                            <td><?=$tr->no_hp?></td>
+                                            <td><?=rupiah($tr->total)?></td>
+                                            <td><?=$tr->jasa_pengiriman . "-" . $tr->nomor_resi?></td>
                                             <td>
-                                                <?= $tr->nama_status ?>
+                                                <?=$tr->nama_status?>
                                             </td>
                                             <td>
                                                 <div class="dropdown">
@@ -106,49 +104,49 @@ function rupiah($angka)
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                         <a class="dropdown-item bg-info text-white"
-                                                            href="<?= base_url('Admin_kelolapesanan/detail_barang_pesanan/' . $tr->id_transaksi) ?>">Detail
+                                                            href="<?=base_url('Admin_kelolapesanan/detail_barang_pesanan/' . $tr->id_transaksi)?>">Detail
                                                             Barang Pesanan</a>
                                                         <a class="dropdown-item bg-success text-white mt-1"
-                                                            href="<?= base_url('assets_arealama/img/bukti_bayar/' . $tr->bukti_bayar) ?>"
+                                                            href="<?=base_url('assets_arealama/img/bukti_bayar/' . $tr->bukti_bayar)?>"
                                                             target="_blank">Lihat
                                                             Bukti Bayar</a>
 
-                                                        <?php if ($tr->status == 0) : ?>
+                                                        <?php if ($tr->status == 0): ?>
 
                                                         <a class="dropdown-item bg-primary text-white mt-1"
-                                                            href="<?= base_url('Admin_kelolapesanan/update_status_pesanan/' . $tr->id_transaksi . '/1') ?>">Terima
+                                                            href="<?=base_url('Admin_kelolapesanan/update_status_pesanan/' . $tr->id_transaksi . '/1')?>">Terima
                                                             Pesanan</a>
 
                                                         <a class="dropdown-item bg-danger text-white mt-1"
-                                                            href="<?= base_url('Admin_kelolapesanan/update_status_pesanan/' . $tr->id_transaksi . '/4') ?>">Tolak
+                                                            href="<?=base_url('Admin_kelolapesanan/update_status_pesanan/' . $tr->id_transaksi . '/4')?>">Tolak
                                                             Pesanan</a>
 
-                                                        <?php elseif ($tr->status == 1) : ?>
+                                                        <?php elseif ($tr->status == 1): ?>
 
                                                         <a class="dropdown-item bg-primary text-white mt-1"
-                                                            href="<?= base_url('Admin_kelolapesanan/update_status_pesanan/' . $tr->id_transaksi . '/2') ?>">Kirim
+                                                            href="<?=base_url('Admin_kelolapesanan/update_status_pesanan/' . $tr->id_transaksi . '/2')?>">Kirim
                                                             Pesanan</a>
 
                                                         <a class="dropdown-item bg-danger text-white mt-1"
-                                                            href="<?= base_url('Admin_kelolapesanan/update_status_pesanan/' . $tr->id_transaksi . '/0') ?>">Batalkan
+                                                            href="<?=base_url('Admin_kelolapesanan/update_status_pesanan/' . $tr->id_transaksi . '/0')?>">Batalkan
                                                             Persetujuan</a>
 
-                                                        <?php elseif ($tr->status == 2) : ?>
+                                                        <?php elseif ($tr->status == 2): ?>
 
                                                         <a class="dropdown-item bg-primary text-white mt-1"
-                                                            href="<?= base_url('Admin_kelolapesanan/update_status_pesanan/' . $tr->id_transaksi . '/3') ?>">Pesanan
+                                                            href="<?=base_url('Admin_kelolapesanan/update_status_pesanan/' . $tr->id_transaksi . '/3')?>">Pesanan
                                                             Diterima</a>
 
 
 
-                                                        <?php endif ?>
+                                                        <?php endif?>
 
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
 
-                                        <?php endforeach ?>
+                                        <?php endforeach?>
 
                                     </tbody>
                                 </table>
@@ -214,7 +212,7 @@ function rupiah($angka)
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('admin_home/logout') ?>">Logout</a>
+                    <a class="btn btn-primary" href="<?=base_url('admin_home/logout')?>">Logout</a>
                 </div>
             </div>
         </div>
@@ -231,7 +229,7 @@ function rupiah($angka)
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="<?= base_url('admin_kelolapembeli/tambah_pembeli') ?>" method="POST">
+                <form action="<?=base_url('admin_kelolapembeli/tambah_pembeli')?>" method="POST">
                     <div class="modal-body">
 
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
