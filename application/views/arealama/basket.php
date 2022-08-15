@@ -48,7 +48,8 @@
                                     <td class="quantity__item">
                                         <div class="quantity">
                                             <div class="pro-qty-2">
-                                                <input type="number" name="qty[]" value="<?=$c['qty']?>" min="1">
+                                                <input type="number" name="qty[]" value="<?=$c['qty']?>" min="1"
+                                                    max="<?=$c['stok']?>">
                                             </div>
                                         </div>
                                     </td>

@@ -32,26 +32,19 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
-    type: "line",
+    type: "bar",
     data: {
         labels: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
+            <?php if ($bulan_graph == ""): ?>
+            <?php foreach ($bulan as $b): ?> "<?=$b?>", <?php endforeach?>
+            <?php else: ?> "<?=$bulan_new?>",
+            <?php endif?>
+
         ],
         datasets: [{
             label: "Earnings",
             lineTension: 0.3,
-            backgroundColor: "rgba(78, 115, 223, 0.05)",
+            backgroundColor: "rgba(78, 115, 223, 1)",
             borderColor: "rgba(78, 115, 223, 1)",
             pointRadius: 3,
             pointBackgroundColor: "rgba(78, 115, 223, 1)",
@@ -62,11 +55,15 @@ var myLineChart = new Chart(ctx, {
             pointHitRadius: 10,
             pointBorderWidth: 2,
             data: [
-                <?= $jan['jml'] ?>, <?= $feb['jml'] ?>, <?= $mar['jml'] ?>, <?= $apr['jml'] ?>,
-                <?= $mei['jml'] ?>, <?= $jun['jml'] ?>, <?= $jul['jml'] ?>, <?= $agu['jml'] ?>,
-                <?= $sep['jml'] ?>,
-                <?= $okt['jml'] ?>,
-                <?= $nov['jml'] ?>, <?= $des['jml'] ?>,
+                <?php if ($bulan_graph == ""): ?>
+                <?=$jan['jml']?>, <?=$feb['jml']?>, <?=$mar['jml']?>, <?=$apr['jml']?>,
+                <?=$mei['jml']?>, <?=$jun['jml']?>, <?=$jul['jml']?>, <?=$agu['jml']?>,
+                <?=$sep['jml']?>,
+                <?=$okt['jml']?>,
+                <?=$nov['jml']?>, <?=$des['jml']?>,
+                <?php else: ?>
+                <?=$bulan_graphh[0]['jml']?>,
+                <?php endif?>
             ],
         }, ],
     },

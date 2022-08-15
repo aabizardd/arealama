@@ -84,12 +84,7 @@
                                                 <div class="dropdown-header">Dropdown Header:</div>
 
 
-                                                <a class="btn btn-danger dropdown-item tombol-hapus mt-2"
-                                                    id="tombol-hapus" type="button"
-                                                    href="<?=base_url('admin_kelolapembeli/hapus_pembeli/') . $class['id']?>"><span
-                                                        style="color: red;"><i class="fas fa-trash"></i></span>
-                                                    Hapus
-                                                </a>
+
 
                                                 <a class="btn btn-success dropdown-item mt-2" type="button"
                                                     href="<?=base_url('admin_kelolapembeli/edit/') . $class['id']?>"><span

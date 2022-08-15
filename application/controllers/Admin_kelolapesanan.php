@@ -31,7 +31,12 @@ class Admin_kelolapesanan extends CI_Controller
         $data = [
             'title' => "Kelola Data Pesanan",
             'transaksi' => $this->admin->get_pesanan_konsumen()->result(),
+            'status_pesanan' => $this->db->get('status_transaksi')->result(),
         ];
+
+        if ($this->input->get('status')) {
+            $data['transaksi'] = $this->admin->get_pesanan_konsumen($this->input->get('status'))->result();
+        }
 
         // $data['praktikans'] = $this->admin->getPraktikansAll()->result();
 

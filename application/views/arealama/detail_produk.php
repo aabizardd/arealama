@@ -49,6 +49,8 @@
                         <?php $harga = "Rp " . number_format($barangs["harga"], 0, ',', '.');?>
                         <h3><?=$harga?></h3>
 
+                        <p>Stok : <?=$barangs['stok']?></p>
+
 
                         <div class="product__details__cart__option">
 

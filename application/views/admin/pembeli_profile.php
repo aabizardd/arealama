@@ -3,7 +3,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "sidebar.php"; ?>
+        <?php include "sidebar.php";?>
 
 
         <!-- Content Wrapper -->
@@ -12,7 +12,7 @@
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "topbar.php"; ?>
+                <?php include "topbar.php";?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid mb-5">
@@ -20,14 +20,14 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Profile Pembeli
-                            <strong class="text-primary"><?= $info_pembeli['nama'] ?></strong>
+                            <strong class="text-primary"><?=$info_pembeli['nama']?></strong>
                         </h1>
 
 
                     </div>
 
-                    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
-                    <div class="flash-data-error" data-flashdata="<?= $this->session->flashdata('flash-error'); ?>">
+                    <div class="flash-data" data-flashdata="<?=$this->session->flashdata('flash');?>"></div>
+                    <div class="flash-data-error" data-flashdata="<?=$this->session->flashdata('flash-error');?>">
                     </div>
 
                     <!-- Content Row -->
@@ -66,39 +66,33 @@
                                             aria-labelledby="home-tab">
 
                                             <div class="row mt-2">
-                                                <div class="col-sm-4">
 
-                                                    <img src="<?= base_url('assets_arealama/') ?>img_profile/<?= $info_pembeli['foto'] ?>"
-                                                        alt="" class="rounded mx-auto d-block img-preview" width="100%"
-                                                        height="400" id="gambar">
 
-                                                </div>
+                                                <div class="col-sm-12 mt-2">
 
-                                                <div class="col-sm-8 mt-2">
-
-                                                    <?= form_error('nama_lengkap', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?=form_error('nama_lengkap', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>'); ?>
+													</button></div>');?>
 
-                                                    <?= form_error('username', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?=form_error('username', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>'); ?>
+													</button></div>');?>
 
-                                                    <?= form_error('email', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?=form_error('email', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>'); ?>
+													</button></div>');?>
 
                                                     <form method="POST"
-                                                        action="<?= base_url('admin_kelolapembeli/edit/' . $info_pembeli['id']) ?>"
+                                                        action="<?=base_url('admin_kelolapembeli/edit/' . $info_pembeli['id'])?>"
                                                         enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Nama Lengkap</label>
                                                             <input type="text" class="form-control" id="nama_lengkap"
                                                                 name="nama_lengkap" autocomplete="off"
-                                                                value="<?= $info_pembeli['nama'] ?>">
+                                                                value="<?=$info_pembeli['nama']?>">
 
                                                         </div>
                                                         <div class="form-group">
@@ -106,19 +100,18 @@
                                                             <input type="text" class="form-control" id="username"
                                                                 aria-describedby="emailHelp" name="username"
                                                                 autocomplete="off"
-                                                                value="<?= $info_pembeli['username'] ?>">
+                                                                value="<?=$info_pembeli['username']?>">
 
                                                         </div>
 
                                                         <input type="hidden" name="id_konsumen"
-                                                            value="<?= $info_pembeli['id'] ?> ">
+                                                            value="<?=$info_pembeli['id']?> ">
 
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Email</label>
                                                             <input type="text" class="form-control" id="email"
                                                                 aria-describedby="emailHelp" name="email"
-                                                                autocomplete="off"
-                                                                value="<?= $info_pembeli['email'] ?>">
+                                                                autocomplete="off" value="<?=$info_pembeli['email']?>">
 
                                                         </div>
 
@@ -126,7 +119,7 @@
                                                             <label for="exampleInputEmail1">No Hp</label>
                                                             <input type="number" class="form-control" id="no_hp"
                                                                 name="no_hp" autocomplete="off"
-                                                                value="<?= $info_pembeli['no_telp'] ?>">
+                                                                value="<?=$info_pembeli['no_telp']?>">
 
                                                         </div>
 
@@ -134,23 +127,12 @@
 
 
                                                         <input type="hidden" id="foto_old" name="foto_bahan"
-                                                            value="<?= $info_pembeli['foto'] ?>">
+                                                            value="<?=$info_pembeli['foto']?>">
 
 
 
 
-                                                        <div class="form-group">
 
-                                                            <label for="exampleInputEmail1">Foto Profil</label>
-
-                                                            <div class="custom-file">
-                                                                <input type="file" class="custom-file-input" name="file"
-                                                                    id="sampul" aria-describedby="inputGroupFileAddon01"
-                                                                    onchange="preview_img()">
-                                                                <label class="custom-file-label" for="inputGroupFile01">
-                                                                    Choose file</label>
-                                                            </div>
-                                                        </div>
 
                                                         <button class="btn btn-primary mt-2" type="submit"
                                                             name="submit">Simpan
@@ -171,7 +153,7 @@
                                             <div class="row mt-2">
                                                 <div class="col-sm-4">
 
-                                                    <img src="<?= base_url('assets_praktikum/') ?>img_lain/lock.png"
+                                                    <img src="<?=base_url('assets_praktikum/')?>img_lain/lock.png"
                                                         alt="" class="rounded mx-auto d-block img-preview" width="100%"
                                                         height="400" id="gambar">
 
@@ -179,23 +161,23 @@
 
                                                 <div class="col-sm-8 mt-2">
 
-                                                    <?= form_error('nama_lengkap', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?=form_error('nama_lengkap', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>'); ?>
+													</button></div>');?>
 
-                                                    <?= form_error('usernmae', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?=form_error('usernmae', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>'); ?>
+													</button></div>');?>
 
-                                                    <?= form_error('email', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?=form_error('email', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 													<strong>Sorry!</strong> ', '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
-													</button></div>'); ?>
+													</button></div>');?>
 
                                                     <form method="POST"
-                                                        action="<?= base_url('admin_profile/update_password') ?>">
+                                                        action="<?=base_url('admin_profile/update_password')?>">
 
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Passwod Lama</label>
@@ -220,7 +202,7 @@
                                                         </div>
 
                                                         <input type="hidden" id="foto_old" name="foto_bahan"
-                                                            value="<?= $info_pembeli['foto'] ?>">
+                                                            value="<?=$info_pembeli['foto']?>">
 
 
 
@@ -276,7 +258,7 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="<?= base_url('admin_home/logout') ?>">Logout</a>
+                            <a class="btn btn-primary" href="<?=base_url('admin_home/logout')?>">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -298,7 +280,7 @@
                             <div class="row">
                                 <div class="col-sm-5">
 
-                                    <img src="<?= base_url('assets_praktikum/img_lain/no_file.png') ?>" alt=""
+                                    <img src="<?=base_url('assets_praktikum/img_lain/no_file.png')?>" alt=""
                                         class="rounded mx-auto d-block img-preview" width="300" height="300"
                                         id="gambar">
 
@@ -306,7 +288,7 @@
 
                                 <div class="col-sm-7 mt-2">
 
-                                    <form method="POST" action="<?= base_url('admin_listmodul/update_bahan/') ?>"
+                                    <form method="POST" action="<?=base_url('admin_listmodul/update_bahan/')?>"
                                         enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Judul Bahan</label>
@@ -325,7 +307,7 @@
 
                                         <input type="hidden" value="asdsa" id="id_bahan" name="id_bahan">
                                         <input type="hidden" id="foto_old" name="foto_bahan">
-                                        <input type="hidden" name="id_praktikum" value="<?= $this->uri->segment(3) ?>">
+                                        <input type="hidden" name="id_praktikum" value="<?=$this->uri->segment(3)?>">
 
 
 

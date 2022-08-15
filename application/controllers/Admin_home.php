@@ -35,10 +35,18 @@ class Admin_home extends CI_Controller
         $data['jml_user'] = $this->db->get('konsumen')->num_rows();
         $data['jml_admin'] = $this->db->get('admin')->num_rows();
 
-        // var_dump($data['jml_user']);die();
+        $bulan = isset($_GET['bulan']) ? $_GET['bulan'] : '';
+
+        $bulan_substr = substr($bulan, 0, 3);
+
+        $data['bulan_graph'] = $bulan;
 
         $year = date("Y");
         $data['tahun'] = $year;
+
+        $data['bulan'] = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+        // var_dump($data['bulan'][12 - 1]);die();
 
         $data_pesanan = [
             'jan' => $this->Admin_model->get_jml_pesanan(1, $year),
@@ -54,6 +62,20 @@ class Admin_home extends CI_Controller
             'nov' => $this->Admin_model->get_jml_pesanan(11, $year),
             'des' => $this->Admin_model->get_jml_pesanan(12, $year),
         ];
+
+        if ($bulan != "") {
+
+            $data['bulan_new'] = $data['bulan'][$bulan - 1];
+
+            // var_dump($data['bulan_new']);die();
+
+            $data['bulan_graphh'] = [
+                $this->Admin_model->get_jml_pesanan($bulan, $year),
+            ];
+
+            // var_dump($data['bulan_graphh']);die();
+
+        }
 
         // $data['jumlah_praktikan'] = $this->Asprak_model->count_all_results('tb_praktikan');
         // $data['jumlah_modul'] = $this->Asprak_model->count_all_results('tb_praktikum');

@@ -95,9 +95,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Jumlah Barang</div>
+                                                Jumlah Produk</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$jml_barang?>
-                                                Barang</div>
+                                                Produk</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -118,8 +118,36 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Penjualan Perbulan (Tahun
-                                        <?=$tahun?>)</h6>
+
+
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-info dropdown-toggle"
+                                            data-toggle="dropdown" aria-expanded="false">
+                                            Pilih bulan
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="<?=base_url('Admin_home')?>">Semua</a>
+                                            <?php $no = 0?>
+                                            <?php foreach ($bulan as $b): ?>
+
+                                            <a class="dropdown-item" href="?bulan=<?=++$no?>"><?=$b?></a>
+
+                                            <?php endforeach?>
+                                        </div>
+                                    </div>
+
+                                    <h6 class="font-weight-bold text-primary" style="margin-left: -100px;">Grafik
+                                        Penjualan
+                                        Perbulan
+                                        (Tahun
+                                        <?=$tahun?>)
+
+
+                                    </h6>
+
+
+
+
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

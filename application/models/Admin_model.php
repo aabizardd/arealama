@@ -232,12 +232,17 @@ class Admin_model extends CI_model
         return $this->db->get();
     }
 
-    public function get_pesanan_konsumen()
+    public function get_pesanan_konsumen($status = null)
     {
         $this->db->select('*');
         $this->db->from('transaksi tr');
         $this->db->join('konsumen ks', 'tr.id_konsumen = ks.id');
         $this->db->join('status_transaksi st', 'tr.status = st.id');
+
+        if ($status != null) {
+
+            $this->db->like('st.nama_status', $status);
+        }
 
         return $this->db->get();
         // $this->db->like('link', $nama);

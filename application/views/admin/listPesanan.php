@@ -42,10 +42,29 @@ function rupiah($angka)
                     <!-- <div class="flash-data" data-flashdata="<?=$this->session->flashdata('flash');?>"></div>
                     <div class="flash-data-error" data-flashdata="<?=$this->session->flashdata('flash-error');?>">
                     </div> -->
+                    <form action="" class="mb-2 ml-3">
+                        <div class="row">
+                            <select class="custom-select col-lg-2 col-sm-12 mt-2 mr-1" name="status">
+                                <option selected value="" disabled>Semua Status Pesanan</option>
+                                <?php foreach ($status_pesanan as $s): ?>
+                                <option value="<?=$s->nama_status?>"><?=$s->nama_status?></option>
+                                <?php endforeach?>
+                            </select>
+
+                            <button class="btn btn-primary mt-2 col-lg-1 col-sm-12">Cari</button>
+                        </div>
+
+
+                    </form>
+
 
                     <div class="card">
 
+
+
                         <div class="card-body">
+
+
 
                             <!-- Button trigger modal -->
 
@@ -95,6 +114,7 @@ function rupiah($angka)
                                                 <?=$tr->nama_status?>
                                             </td>
                                             <td>
+                                                <?php if ($tr->status != 3): ?>
                                                 <div class="dropdown">
                                                     <a class="btn btn-primary dropdown-toggle col-12" href="#"
                                                         role="button" id="dropdownMenuLink" data-toggle="dropdown"
@@ -143,6 +163,7 @@ function rupiah($angka)
 
                                                     </div>
                                                 </div>
+                                                <?php endif?>
                                             </td>
                                         </tr>
 
