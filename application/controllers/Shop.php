@@ -83,6 +83,7 @@ class Shop extends CI_Controller
             'carts' => $cart,
             'total_cart' => $total,
             'ongkir' => $ongkir,
+            'transaksi' => $this->db->get_where('transaksi', ['id_konsumen' => $id_konsumen])->result(),
         ];
 
         $this->load->view('arealama_template/header');
@@ -94,7 +95,10 @@ class Shop extends CI_Controller
     {
         $nama_depan = $this->input->post('nama_depan');
         $nama_belakang = $this->input->post('nama_belakang');
-        $alamat = $this->input->post('alamat');
+        $pil_alamat = $this->input->post('pil_alamat');
+
+        $alamat = $pil_alamat == "baru" ? $this->input->post('alamat_new') : $this->input->post('alamat_lama');
+
         $no_hp = $this->input->post('no_hp');
         $bukti_bayar = $this->_upload();
         $id_konsumen = $this->session->userdata('id_konsumen');

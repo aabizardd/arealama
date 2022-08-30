@@ -54,11 +54,35 @@
                             </select>
 
                         </div>
+                        <div class="checkout__input" style="margin-bottom: 80px;">
+                            <p>Pilih Alamat</p>
+                            <select name="pil_alamat" id="pil_alamat" class="checkout__input__add col-12"
+                                onchange="det_lamat(this.value)">
 
-                        <div class="checkout__input">
+                                <option value="" selected>Pilih...</option>
+                                <option value="baru">Baru</option>
+                                <option value="lama">Lama</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="checkout__input" id="alamat_new" style="display: none;">
                             <p>Alamat Lengkap</p>
-                            <input type="text" placeholder="Street Address" class="checkout__input__add" name="alamat"
-                                required />
+                            <input type="text" placeholder="Street Address" class="checkout__input__add"
+                                name="alamat_new" />
+                        </div>
+
+                        <div class="checkout__input" id="alamat_lama" style="margin-bottom: 80px;display: none;">
+                            <p>Alamat Lengkap</p>
+                            <select name="alamat_lama" class="checkout__input__add col-12">
+
+                                <option value="" selected>Pilih...</option>
+                                <?php foreach ($transaksi as $t): ?>
+                                <option value=" <?=$t->alamat?>"><?=$t->alamat?></option>
+                                <?php endforeach?>
+                            </select>
+
                         </div>
 
                         <div class="row">
@@ -165,5 +189,24 @@ function formatRupiah(angka, prefix) {
 
     rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
     return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+}
+
+
+
+function det_lamat(item) {
+
+    // alert(item)
+
+    if (item == "baru") {
+
+        $("#alamat_new").css("display", "block");
+        $("#alamat_lama").css("display", "none");
+
+
+    } else {
+        $("#alamat_lama").css("display", "block");
+        $("#alamat_new").css("display", "none");
+    }
+
 }
 </script>
